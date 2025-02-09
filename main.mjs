@@ -8,20 +8,31 @@ const context = canvas.getContext("2d");
 class ScrambleText {
   /** @param {HTMLElement} el **/
   constructor(el) {
+    this.frame = 0;
     this.element = el;
     this.original = el.innerText;
     this.scrambled = "";
     el.innerText = "";
   }
+  getRandomChar() {
+    const chars = "~!@#$%*()_+-=?<>{}";
+    return chars[Math.round(Math.random() * (chars.length - 1))];
+  }
   done() {
     return this.scrambled === this.original;
   }
   update() {
-    if (this.done()) {
+    this.frame++;
+    if (this.frame < 3 || this.done()) {
       return;
     }
+    this.frame = 0;
     this.scrambled += this.original[this.scrambled.length];
-    this.element.innerText = this.scrambled;
+    let glitch = this.scrambled.length > 8 ? this.scrambled : "";
+    for (let i = 0; i <= 8; i++) {
+      glitch += this.getRandomChar();
+    }
+    this.element.innerText = this.done() ? this.scrambled : glitch;
   }
 }
 
@@ -54,6 +65,12 @@ class Vector {
   add(other) {
     this.x += other.x;
     this.y += other.y;
+    return this;
+  }
+  multiplyScalar(value) {
+    this.x *= value;
+    this.y *= value;
+    return this;
   }
 }
 
@@ -62,8 +79,7 @@ class FakeText {
     this.reset();
   }
   reset() {
-    this.size = Math.random() * (20 - 5) + 5;
-    this.color = `rgba(0, 255, 100, ${Math.random() * (0.5 - 0.1) + 0.1})`;
+    this.size = Math.random() * (20 - 10) + 5;
     this.velocity = new Vector(
       Math.random() * 0.5 * (-1 * Math.random()),
       Math.random() * 0.5 * (-1 * Math.random()),
@@ -83,8 +99,9 @@ class FakeText {
       this.reset();
     }
     this.position.add(this.velocity);
+    const opacity = Math.random() * (0.5 - 0.1) + 0.1;
     context.beginPath();
-    context.fillStyle = this.color;
+    context.fillStyle = `rgba(100, 150, 80, ${opacity})`;
     context.fillRect(this.position.x, this.position.y, this.size, this.size);
     context.closePath();
   }
@@ -98,19 +115,22 @@ class FuturisticCanvas {
       this.texts.push(new FakeText());
     }
   }
-  update() {
+  update(delta) {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    this.texts.forEach((text) => text.update());
+    this.texts.forEach((text) => text.update(delta));
   }
 }
 
 const scramble = new Scramble();
 const futuristic = new FuturisticCanvas();
 
-function mainLoop() {
-  scramble.update();
-  futuristic.update();
-  requestAnimationFrame(mainLoop);
-}
+let previousTime = performance.now();
 
-mainLoop();
+function mainLoop(timestamp) {
+  const delta = timestamp - previousTime;
+  scramble.update(delta);
+  futuristic.update(delta);
+  requestAnimationFrame(mainLoop);
+  previousTime = timestamp;
+}
+requestAnimationFrame(mainLoop);

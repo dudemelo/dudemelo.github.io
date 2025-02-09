@@ -6,6 +6,7 @@ class ScrambleText {
     this.element = el;
     this.original = el.innerText;
     this.scrambled = "";
+    el.innerText = "";
   }
   done() {
     return this.scrambled === this.original;

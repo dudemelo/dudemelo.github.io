@@ -15,27 +15,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>JF Melo | Senior Software Engineer</title>
   </head>
-  <body class="bg-neutral-950">
-    <header class="bg-slate-100 h-32 mb-64 pt-10" role="heading">
-      <div class="min-w-md max-w-lg mx-auto">
-        <img
-          class="border-slate-100 border-8 mb-4 rounded-full w-40"
-          src="/images/jf-melo-avatar.jpg"
-          alt="JF Melo's avatar"
-        />
-        <h1
-          class="font-extrabold mb-6 text-4xl text-white tracking-tighter"
-          data-scrambled
-        >
-          Hi, I'm José Melo.
-        </h1>
-        <p class="text-lime-400 text-lg" role="presentation" data-scrambled>
-          Staff Engineer, 15+ years, Tech Addict, Caffeine Dependent, Probably
-          ADHD, Husband, and Father of 2.
-        </p>
-      </div>
+  <body class="bg-neutral-950 overflow-x-hidden">
+    <canvas class="absolute"></canvas>
+    <header class="min-w-md max-w-lg mx-auto py-10" role="heading">
+      <img
+        class="border-slate-100 border-8 mb-4 rounded-full w-40"
+        src="/images/jf-melo-avatar.jpg"
+        alt="JF Melo's avatar"
+      />
+      <h1
+        class="font-extrabold mb-6 text-4xl text-white tracking-tighter"
+        data-scrambled
+      >
+        Hi, I'm José Melo.
+      </h1>
+      <p
+        class="font-mono text-lime-400 text-lg"
+        role="presentation"
+        data-scrambled
+      >
+        Staff Engineer, 15+ years, Tech Addict, Caffeine Dependent, Probably
+        ADHD, Husband, and Father of 2.
+      </p>
     </header>
-    <canvas class="my-6" id="tshape"></canvas>
     <main class="min-w-md max-w-lg mx-auto sm:px-0">
       <nav class="flex flex-col gap-2 text-slate-900" role="navigation">
         <a
@@ -142,6 +144,6 @@
         </a>
       </p>
     </footer>
-    <script src="main.mjs" type="module"></script>
+    <script src="main.mjs" type="module" defer></script>
   </body>
 </html>

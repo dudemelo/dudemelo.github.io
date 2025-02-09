@@ -40,10 +40,27 @@ class Scramble {
   }
 }
 
+class TShape {
+  constructor() {
+    /** @type {HTMLCanvasElement} **/
+    const canvas = document.getElementById("tshape");
+    canvas.width = window.innerWidth;
+    canvas.height = 400;
+    const context = canvas.getContext("2d");
+    context.beginPath();
+    context.fillStyle = "white";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.closePath();
+  }
+  update() {}
+}
+
 const scramble = new Scramble();
+const tshape = new TShape();
 
 function mainLoop() {
   scramble.update();
+  tshape.update();
   requestAnimationFrame(mainLoop);
 }
 

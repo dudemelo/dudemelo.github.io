@@ -8,7 +8,8 @@ const context = canvas.getContext("2d");
 class ScrambleText {
   /** @param {HTMLElement} el **/
   constructor(el) {
-    this.frame = 0;
+    this.typingFrame = 0;
+    this.glitchFrame = 0;
     this.element = el;
     this.original = el.innerText;
     this.scrambled = "";
@@ -21,12 +22,12 @@ class ScrambleText {
   done() {
     return this.scrambled === this.original;
   }
-  update() {
-    this.frame++;
-    if (this.frame < 3 || this.done()) {
+  updateType() {
+    this.typingFrame++;
+    if (this.typingFrame === 4 || this.done()) {
       return;
     }
-    this.frame = 0;
+    this.typingFrame = 0;
     this.scrambled += this.original[this.scrambled.length];
     let glitch = this.scrambled.length > 8 ? this.scrambled : "";
     for (let i = 0; i <= 8; i++) {
@@ -34,25 +35,46 @@ class ScrambleText {
     }
     this.element.innerText = this.done() ? this.scrambled : glitch;
   }
+  updateGlitch() {
+    this.glitchFrame++;
+    if (this.glitchFrame <= 300) {
+      this.element.innerText = this.original;
+      return;
+    }
+    if (this.glitchFrame >= 320) {
+      this.scrambled = this.original;
+      this.glitchFrame = 0;
+      return;
+    }
+    const maxChar = this.scrambled.length - 6;
+    const randomChar = Math.round(Math.random() * (maxChar - 1) + 1);
+    this.scrambled = this.original.slice(0, randomChar);
+    for (let i = 0; i < 5; i++) {
+      this.scrambled += this.getRandomChar();
+    }
+    this.scrambled += this.original.slice(randomChar + 5);
+    this.element.innerText = this.scrambled;
+  }
 }
 
 class Scramble {
   constructor() {
     /** @type {ScrambleText[]} **/
-    this.queue = [];
+    this.typingQueue = [];
+    this.glitchQueue = [];
     document.querySelectorAll("[data-scrambled]").forEach((el) => {
-      this.queue.push(new ScrambleText(el));
+      this.typingQueue.push(new ScrambleText(el));
     });
   }
   update() {
-    if (this.queue.length < 1) {
-      return;
+    if (this.typingQueue.length > 0) {
+      const current = this.typingQueue[0];
+      current.updateType();
+      if (current.done()) {
+        this.glitchQueue.push(this.typingQueue.shift());
+      }
     }
-    const current = this.queue[0];
-    current.update();
-    if (current.done()) {
-      this.queue.shift();
-    }
+    this.glitchQueue.forEach((text) => text.updateGlitch());
   }
 }
 
@@ -81,8 +103,8 @@ class FakeText {
   reset() {
     this.size = Math.random() * (20 - 10) + 5;
     this.velocity = new Vector(
-      Math.random() * 0.5 * (-1 * Math.random()),
-      Math.random() * 0.5 * (-1 * Math.random()),
+      Math.random() * 0.5 * (-1 * Math.round(Math.random())),
+      Math.random() * 0.5 * (-1 * Math.round(Math.random())),
     );
     this.position = new Vector(
       Math.random() * canvas.width,

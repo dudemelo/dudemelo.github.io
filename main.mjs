@@ -96,16 +96,25 @@ class Vector {
   }
 }
 
-class FakeText {
+class Rect {
+  constructor(x = 0, y = 0, width = 0, height = 0) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+  }
+}
+
+class FloatingSquare {
   constructor() {
     this.reset();
   }
   reset() {
     this.size = Math.random() * (20 - 10) + 5;
-    this.velocity = new Vector(
-      Math.random() * 0.5 * (-1 * Math.round(Math.random())),
-      Math.random() * 0.5 * (-1 * Math.round(Math.random())),
-    );
+    const randomSpeed =
+      Math.random() * 0.8 * (0.8 - 0.4) +
+      0.4 * (-1 * Math.round(Math.random()));
+    this.velocity = new Vector(randomSpeed, randomSpeed);
     this.position = new Vector(
       Math.random() * canvas.width,
       Math.random() * canvas.height,
@@ -129,17 +138,47 @@ class FakeText {
   }
 }
 
-class FuturisticCanvas {
+class FakeCode {
   constructor() {
-    /** @type {FakeText[]} **/
-    this.texts = [];
-    for (let i = 0; i < 20; i++) {
-      this.texts.push(new FakeText());
+    this.rects = [];
+    for (let i = 0; i < 10; i++) {
+      const width = this.getRandomWidth();
+      this.rects.push(
+        new Rect(canvas.width - width - 50, 10 * i + 50, width, 3),
+      );
     }
   }
-  update(delta) {
+  getRandomWidth() {
+    return Math.random() * (200 - 50) + 50;
+  }
+  update() {
+    context.beginPath();
+    context.fillStyle = `rgba(100, 150, 0, 0.4)`;
+    this.rects.forEach((rect) => {
+      if (rect.y <= 50) {
+        rect.width = this.getRandomWidth();
+        rect.x = canvas.width - rect.width - 50;
+      }
+      rect.y -= rect.y <= 50 ? -(10 * 10) : 1;
+      context.fillRect(rect.x, rect.y, rect.width, rect.height);
+    });
+    context.closePath();
+  }
+}
+
+class FuturisticCanvas {
+  constructor() {
+    /** @type {FloatingSquare[]} **/
+    this.squares = [];
+    this.fakeCode = new FakeCode();
+    for (let i = 0; i < 20; i++) {
+      this.squares.push(new FloatingSquare());
+    }
+  }
+  update() {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    this.texts.forEach((text) => text.update(delta));
+    this.squares.forEach((square) => square.update());
+    this.fakeCode.update();
   }
 }
 
@@ -149,9 +188,8 @@ const futuristic = new FuturisticCanvas();
 let previousTime = performance.now();
 
 function mainLoop(timestamp) {
-  const delta = timestamp - previousTime;
-  scramble.update(delta);
-  futuristic.update(delta);
+  scramble.update();
+  futuristic.update();
   requestAnimationFrame(mainLoop);
   previousTime = timestamp;
 }

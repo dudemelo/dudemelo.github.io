@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on Software Development and DevOps Insights | jfmelo.com</title>
+    <link>http://localhost:1313/tags/performance/</link>
+    <description>Recent content in Performance on Software Development and DevOps Insights | jfmelo.com</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 16 Feb 2025 14:33:49 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The JavasSript Mistakes You are Making That Waste Node.js Speed and Slow Down Your App</title>
+      <link>http://localhost:1313/posts/the-javascript-mistakes-you-are-making-that-waste-node.js-speed-and-slow-down-your-app/</link>
+      <pubDate>Sun, 16 Feb 2025 14:33:49 +0100</pubDate>
+      <guid>http://localhost:1313/posts/the-javascript-mistakes-you-are-making-that-waste-node.js-speed-and-slow-down-your-app/</guid>
+      <description>&lt;p&gt;Everyone is tired of reading about the &lt;strong&gt;non-blocking I/O&lt;/strong&gt; and &lt;strong&gt;single-threaded event loop&lt;/strong&gt; to handle thousands&#xA;of concurrent operations efficiently. Howerver, certain coding pattern can sabotage these ev&lt;/p&gt;&#xA;&lt;h2 id=&#34;blocking-the-event-loop-with-synchronous-code&#34;&gt;Blocking the Event Loop with Synchronous Code&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;using sync method (e.g. readFileSync) or CPU-heavy tasks in the main thread&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;improper-use-of-promisesasync-await&#34;&gt;Improper Use of Promises/Async-Await&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;unecessary sequential await calls or broken promise chains&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;callback-hell-without-proper-async-flow&#34;&gt;Callback Hell Without Proper Async Flow&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;deeply nested callbacks (pyramid of doom) and poor error handling&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;misusing-timers-and-intervals&#34;&gt;Misusing Timers and Intervals&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Using setInterval for CPU-heavy tasks or pilling up unresolverd timers&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ignoring-streams-for-large-data&#34;&gt;Ignoring Streams for Large Data&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Loading entire files into memory (e.g. fs.readFile) instead of streaming.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;blocking-third-party-libraries&#34;&gt;Blocking Third-Party Libraries&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Using synchronous external liberaries in async code&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;not-offloading-cpu-intersive-tasks&#34;&gt;Not Offloading CPU-Intersive tasks&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Running heavy computations (e.g. image processing) in the main thread&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;poor-error-handiling-in-async-code&#34;&gt;Poor Error Handiling in Async Code&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Unhandled promise rejections or swalloed errors.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;assuming-multi-threaded-behavior&#34;&gt;Assuming Multi-Threaded Behavior&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Writing code with race conditions due to misunderstanding Node.js concurrency.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

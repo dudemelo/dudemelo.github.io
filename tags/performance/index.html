@@ -11,7 +11,7 @@
 
 <meta name="robots" content="index, follow" />
 
-<link rel="canonical" href="http://localhost:1313/home/" />
+<link rel="canonical" href="http://localhost:1313/tags/performance/" />
 <link rel="alternate" hreflang="en" href="https://jfmelo.com" />
 
 
@@ -60,7 +60,7 @@
 </style>
 
 
-<title> | Software Development and DevOps Insights | jfmelo.com</title>
+<title>Performance | Software Development and DevOps Insights | jfmelo.com</title>
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
@@ -87,8 +87,7 @@
 </header>
 
     <main>
-
-<section class="lg:px-0 max-w-2xl mx-auto px-4 pt-10">
+<section class="lg:px-0 max-w-2xl mx-auto px-4 py-20">
   <ul class="flex mb-6 text-gray-600 text-sm">
   <li>
     <a href="/">
@@ -97,39 +96,83 @@
       </svg>
     </a>
   </li>
+      <li class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+          <path fill-rule="evenodd" d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z" clip-rule="evenodd" />
+        </svg>
+        <a href="/tags/">
+          Tags
+        </a>
+      </li>
   <li class="flex">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
       <path fill-rule="evenodd" d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z" clip-rule="evenodd" />
     </svg>
-    
+    Performance
   </li>
 </ul>
 
-
-  <article id="post">
-    <h1 class="font-extrabold leading-2xl mb-5 text-5xl/15 tracking-tighter">
-      
-    </h1>
-    <div class="border-neutral-900 border-b border-t py-3 text-gray-500 text-sm">
-       
-      <span>1 minutes to read</span>
-      <span aria-hidden="true">&bull;</span>
-      <time datetime="0001-01-01T00:00:00&#43;00:00">January 1, 1</time>
-    </div>
-    <div class="mb-6"></div>
-    <p><h1 id="teste">teste</h1></p>
-    <article id="table-of-contents">
-  <strong>Table of contents</strong>
-  <nav id="TableOfContents"></nav>
-</article>
-
-    <h1 id="teste">teste</h1>
-
+  <h1 class="font-extrabold leading-2xl mb-5 text-5xl tracking-tighter">
+    Performance
+  </h1>
+  <p class="mb-10 text-gray-500 text-xl">
+    JavaScript, Go, Godot, and etc.
+  </p>
+   
+  
     
-
-  </article>
+      <article class="border-t border-neutral-900 py-8">
+        <h2 class="font-bold text-2xl mb-3 tracking-tighter">
+          <a href="/posts/the-javascript-mistakes-you-are-making-that-waste-node.js-speed-and-slow-down-your-app/">The JavasSript Mistakes You are Making That Waste Node.js Speed and Slow Down Your App</a>
+        </h2>
+        <a href="/posts/the-javascript-mistakes-you-are-making-that-waste-node.js-speed-and-slow-down-your-app/"> <p>Everyone is tired of reading about the <strong>non-blocking I/O</strong> and <strong>single-threaded event loop</strong> to handle thousands
+of concurrent operations efficiently. Howerver, certain coding pattern can sabotage these ev</p>
+<h2 id="blocking-the-event-loop-with-synchronous-code">Blocking the Event Loop with Synchronous Code</h2>
+<ul>
+<li>using sync method (e.g. readFileSync) or CPU-heavy tasks in the main thread</li>
+</ul>
+<h2 id="improper-use-of-promisesasync-await">Improper Use of Promises/Async-Await</h2>
+<ul>
+<li>unecessary sequential await calls or broken promise chains</li>
+</ul>
+<h2 id="callback-hell-without-proper-async-flow">Callback Hell Without Proper Async Flow</h2>
+<ul>
+<li>deeply nested callbacks (pyramid of doom) and poor error handling</li>
+</ul>
+<h2 id="misusing-timers-and-intervals">Misusing Timers and Intervals</h2>
+<ul>
+<li>Using setInterval for CPU-heavy tasks or pilling up unresolverd timers</li>
+</ul>
+<h2 id="ignoring-streams-for-large-data">Ignoring Streams for Large Data</h2>
+<ul>
+<li>Loading entire files into memory (e.g. fs.readFile) instead of streaming.</li>
+</ul>
+<h2 id="blocking-third-party-libraries">Blocking Third-Party Libraries</h2>
+<ul>
+<li>Using synchronous external liberaries in async code</li>
+</ul>
+<h2 id="not-offloading-cpu-intersive-tasks">Not Offloading CPU-Intersive tasks</h2>
+<ul>
+<li>Running heavy computations (e.g. image processing) in the main thread</li>
+</ul>
+<h2 id="poor-error-handiling-in-async-code">Poor Error Handiling in Async Code</h2>
+<ul>
+<li>Unhandled promise rejections or swalloed errors.</li>
+</ul>
+<h2 id="assuming-multi-threaded-behavior">Assuming Multi-Threaded Behavior</h2>
+<ul>
+<li>Writing code with race conditions due to misunderstanding Node.js concurrency.</li>
+</ul> </a>
+        <div class="mt-4 text-gray-500 text-sm">
+           
+          <span>1 minutes to read</span>
+          <span aria-hidden="true">&bull;</span>
+          <time datetime="2025-02-16T14:33:49&#43;01:00">February 16, 2025</time>
+        </div>
+      </article>
+    
+  
 </section>
-
 </main>
     <footer class="bg-neutral-900 py-10 text-center text-neutral-500 text-sm">
   <p xmlns:cc="http://creativecommons.org/ns#">

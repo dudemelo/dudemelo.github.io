@@ -1,0 +1,248 @@
+<!doctype html>
+<html
+  lang="en-US"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <meta name="description" content="I get that, you love Node.js because it is extremely performatic even using a single thread." />
+  <meta property="og:title" content="The JavasSript Mistakes You are Making That Waste Node.js Speed and Slow Down Your App" />
+  <meta property="og:description" content="I get that, you love Node.js because it is extremely performatic even using a single thread." />
+  
+  <meta property="og:url" content="http://localhost:1313/posts/the-javascript-mistakes-you-are-making-that-waste-node.js-speed-and-slow-down-your-app/" />
+  
+  <meta name="twitter:title" content="The JavasSript Mistakes You are Making That Waste Node.js Speed and Slow Down Your App" />
+  <meta name="twitter:description" content="I get that, you love Node.js because it is extremely performatic even using a single thread." />
+  
+
+
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href="http://localhost:1313/posts/the-javascript-mistakes-you-are-making-that-waste-node.js-speed-and-slow-down-your-app/" />
+<link rel="alternate" hreflang="en" href="https://jfmelo.com" />
+
+
+<style type="text/tailwindcss">
+  #post h2,
+  #post h3,
+  #post h4,
+  #post pre {
+    @apply mb-5;
+  }
+  #post p,
+  #post pre,
+  #post hr {
+    @apply mb-7;
+  }
+  #post h2 {
+    @apply font-bold text-3xl tracking-tighter;
+  }
+  #post h3 {
+    @apply font-bold text-2xl tracking-tighter;
+  }
+  #post h4 {
+    @apply font-bold text-xl tracking-tighter;
+  }
+  #post p {
+    @apply font-serif text-xl;
+  }
+  #post p a {
+    @apply underline;
+  }
+  #post pre {
+    @apply font-mono overflow-auto p-4 rounded;
+  }
+  #post hr {
+    @apply border-8 border-neutral-900;
+  }
+  #post #table-of-contents {
+    @apply bg-neutral-950 mb-6 mx-auto p-4 text-gray-400;
+  }
+  #post #table-of-contents ol {
+    @apply list-decimal list-inside mt-2;
+  }
+  #post #table-of-contents ol a:hover {
+    @apply underline;
+  }
+</style>
+
+
+<title>The JavasSript Mistakes You are Making That Waste Node.js Speed and Slow Down Your App | Software Development and DevOps Insights | jfmelo.com</title>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-black text-gray-300">
+    <header class="border-b border-lime-900 px-4">
+  <div class="flex items-center justify-between max-w-4xl mx-auto py-4">
+    <a class="font-extrabold text-gray-200 text-xl tracking-tighter" data-scrambled href="/" title="Software Development and DevOps Insights | jfmelo.com"
+      >jfmelo</a
+    >
+    
+    <ul class="flex">
+    <li>
+      <a aria-current="true" class="block px-4 py-2 text-neutral-500" href="/posts/">Posts</a>
+    </li>
+    <li>
+      <a class="block hover:bg-neutral-950 hover:text-white px-4 py-2 rounded" href="/categories/">Categories</a>
+    </li>
+    <li>
+      <a class="block hover:bg-neutral-950 hover:text-white px-4 py-2 rounded" href="/tags/">Tags</a>
+    </li>
+    </ul>
+
+  </div>
+</header>
+
+    <main>
+
+<section class="lg:px-0 max-w-2xl mx-auto px-4 pt-10">
+  <ul class="flex mb-6 text-gray-600 text-sm">
+  <li>
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+        <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </li>
+      <li class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+          <path fill-rule="evenodd" d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z" clip-rule="evenodd" />
+        </svg>
+        <a href="/posts/">
+          Posts
+        </a>
+      </li>
+  <li class="flex">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+      <path fill-rule="evenodd" d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z" clip-rule="evenodd" />
+    </svg>
+    The JavasSript Mistakes You are Making That Waste Node.js Speed and Slow Down Your App
+  </li>
+</ul>
+
+
+  <article id="post">
+    <h1 class="font-extrabold leading-2xl mb-5 text-5xl/15 tracking-tighter">
+      The JavasSript Mistakes You are Making That Waste Node.js Speed and Slow Down Your App
+    </h1>
+    <div class="border-neutral-900 border-b border-t py-3 text-gray-500 text-sm">
+       
+      <span>1 minutes to read</span>
+      <span aria-hidden="true">&bull;</span>
+      <time datetime="2025-02-16T14:33:49&#43;01:00">February 16, 2025</time>
+    </div>
+    <div class="mb-6"></div>
+    <p>I get that, you love Node.js because it is extremely performatic even using a single thread.</p>
+    <article id="table-of-contents">
+  <strong>Table of contents</strong>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#blocking-the-event-loop-with-synchronous-code">Blocking the Event Loop with Synchronous Code</a></li>
+    <li><a href="#improper-use-of-promisesasync-await">Improper Use of Promises/Async-Await</a></li>
+    <li><a href="#callback-hell-without-proper-async-flow">Callback Hell Without Proper Async Flow</a></li>
+    <li><a href="#misusing-timers-and-intervals">Misusing Timers and Intervals</a></li>
+    <li><a href="#ignoring-streams-for-large-data">Ignoring Streams for Large Data</a></li>
+    <li><a href="#blocking-third-party-libraries">Blocking Third-Party Libraries</a></li>
+    <li><a href="#not-offloading-cpu-intersive-tasks">Not Offloading CPU-Intersive tasks</a></li>
+    <li><a href="#poor-error-handiling-in-async-code">Poor Error Handiling in Async Code</a></li>
+    <li><a href="#assuming-multi-threaded-behavior">Assuming Multi-Threaded Behavior</a></li>
+  </ol>
+</nav>
+</article>
+
+    <p>Everyone is tired of reading about the <strong>non-blocking I/O</strong> and <strong>single-threaded event loop</strong> to handle thousands
+of concurrent operations efficiently. Howerver, certain coding pattern can sabotage these ev</p>
+<p>I get that, you love Node.js because it&rsquo;s an extremely</p>
+<h2 id="blocking-the-event-loop-with-synchronous-code">Blocking the Event Loop with Synchronous Code</h2>
+<ul>
+<li>using sync method (e.g. readFileSync) or CPU-heavy tasks in the main thread</li>
+</ul>
+<h2 id="improper-use-of-promisesasync-await">Improper Use of Promises/Async-Await</h2>
+<ul>
+<li>unecessary sequential await calls or broken promise chains</li>
+</ul>
+<h2 id="callback-hell-without-proper-async-flow">Callback Hell Without Proper Async Flow</h2>
+<ul>
+<li>deeply nested callbacks (pyramid of doom) and poor error handling</li>
+</ul>
+<h2 id="misusing-timers-and-intervals">Misusing Timers and Intervals</h2>
+<ul>
+<li>Using setInterval for CPU-heavy tasks or pilling up unresolverd timers</li>
+</ul>
+<h2 id="ignoring-streams-for-large-data">Ignoring Streams for Large Data</h2>
+<ul>
+<li>Loading entire files into memory (e.g. fs.readFile) instead of streaming.</li>
+</ul>
+<h2 id="blocking-third-party-libraries">Blocking Third-Party Libraries</h2>
+<ul>
+<li>Using synchronous external liberaries in async code</li>
+</ul>
+<h2 id="not-offloading-cpu-intersive-tasks">Not Offloading CPU-Intersive tasks</h2>
+<ul>
+<li>Running heavy computations (e.g. image processing) in the main thread</li>
+</ul>
+<h2 id="poor-error-handiling-in-async-code">Poor Error Handiling in Async Code</h2>
+<ul>
+<li>Unhandled promise rejections or swalloed errors.</li>
+</ul>
+<h2 id="assuming-multi-threaded-behavior">Assuming Multi-Threaded Behavior</h2>
+<ul>
+<li>Writing code with race conditions due to misunderstanding Node.js concurrency.</li>
+</ul>
+
+    
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/javascript/">JavaScript</a></li>
+        <li><a href="/tags/typescript/">TypeScript</a></li>
+        <li><a href="/tags/node.js/">Node.js</a></li>
+        <li><a href="/tags/performance/">Performance</a></li>
+    </ul>
+  </div>
+
+  </article>
+</section>
+
+</main>
+    <footer class="bg-neutral-900 py-10 text-center text-neutral-500 text-sm">
+  <p xmlns:cc="http://creativecommons.org/ns#">
+    &copy; 2025
+    <a
+      rel="cc:attributionURL dct:creator"
+      property="cc:attributionName"
+      href="https://dudemelo.github.io"
+      >JFMelo</a
+    >. All rights reserved by
+    <a
+      href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
+      target="_blank"
+      rel="license noopener noreferrer"
+      >CC BY-SA 4.0
+      <img
+        class="inline opacity-40 w-5"
+        src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+        alt=""
+      />
+      <img
+        class="inline opacity-40 w-5"
+        src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+        alt=""
+      />
+      <img
+        class="inline opacity-40 w-5"
+        src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+        alt=""
+      />
+    </a>
+  </p>
+</footer>
+
+      <script src="/js/main.js"></script>
+
+
+  </body>
+</html>

@@ -3,8 +3,8 @@
   (() => {
     "use strict";
     const canvas = document.querySelector("canvas");
-    canvas.width = window.innerWidth - 20;
-    canvas.height = 300;
+    canvas.width = document.body.clientWidth;
+    canvas.height = 450;
     const context = canvas.getContext("2d");
     class ScrambleText {
       /** @param {HTMLElement} el **/
@@ -94,61 +94,80 @@
       }
     }
     class Rect {
-      constructor(x = 0, y = 0, width = 0, height = 0) {
-        this.x = x;
-        this.y = y;
+      /** @param {Vector} position **/
+      constructor(position = new Vector(0, 0), width = 0, height = 0) {
+        this.position = position;
         this.width = width;
         this.height = height;
+      }
+      center() {
+        return new Vector(
+          this.width / 2 + this.position.x,
+          this.height / 2 + this.position.y
+        );
       }
     }
     class FloatingSquare {
       constructor() {
         this.reset();
       }
+      getRandomSpeed() {
+        return Math.random() * 0.8 * (0.8 - 0.4) + 0.4 * (-1 * Math.round(Math.random()));
+      }
       reset() {
-        this.size = Math.random() * (20 - 10) + 5;
-        const randomSpeed = Math.random() * 0.8 * (0.8 - 0.4) + 0.4 * (-1 * Math.round(Math.random()));
-        this.velocity = new Vector(randomSpeed, randomSpeed);
-        this.position = new Vector(
+        const size = Math.random() * (20 - 10) + 5;
+        this.velocity = new Vector(this.getRandomSpeed(), this.getRandomSpeed());
+        const position = new Vector(
           Math.random() * canvas.width,
           Math.random() * canvas.height
         );
+        this.rect = new Rect(position, size, size);
       }
       update() {
-        if (this.position.x + this.size < 0 || this.position.x > canvas.width || this.position.y + this.size < 0 || this.position.y > canvas.height) {
+        if (this.rect.position.x + this.rect.width < 0 || this.rect.position.x > canvas.width || this.rect.position.y + this.rect.height < 0 || this.rect.position.y > canvas.height) {
           this.reset();
         }
-        this.position.add(this.velocity);
-        const opacity = Math.random() * (0.5 - 0.1) + 0.1;
+        this.rect.position.add(this.velocity);
         context.beginPath();
-        context.fillStyle = `rgba(100, 150, 80, ${opacity})`;
-        context.fillRect(this.position.x, this.position.y, this.size, this.size);
+        context.fillStyle = "rgba(255, 255, 255, 0.1)";
+        context.fillRect(
+          this.rect.position.x,
+          this.rect.position.y,
+          this.rect.width,
+          this.rect.height
+        );
         context.closePath();
       }
     }
     class FakeCode {
       constructor() {
+        this.amountRects = 10;
+        this.spacing = 8;
         this.rects = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < this.amountRects; i++) {
           const width = this.getRandomWidth();
-          this.rects.push(
-            new Rect(canvas.width - width - 50, 10 * i + 50, width, 3)
-          );
+          const position = new Vector(canvas.width - width, this.spacing * i);
+          this.rects.push(new Rect(position, width, 2));
         }
       }
       getRandomWidth() {
-        return Math.random() * (200 - 50) + 50;
+        return Math.random() * (150 - 50) + 50;
       }
       update() {
         context.beginPath();
-        context.fillStyle = `rgba(100, 150, 0, 0.4)`;
+        context.fillStyle = "rgba(150, 150, 150, 0.3)";
         this.rects.forEach((rect) => {
-          if (rect.y <= 50) {
+          if (rect.position.y <= 0) {
             rect.width = this.getRandomWidth();
-            rect.x = canvas.width - rect.width - 50;
+            rect.position.x = canvas.width - rect.width;
           }
-          rect.y -= rect.y <= 50 ? -(10 * 10) : 1;
-          context.fillRect(rect.x, rect.y, rect.width, rect.height);
+          rect.position.y -= rect.position.y <= 0 ? -(this.spacing * this.amountRects) : 1.4;
+          context.fillRect(
+            rect.position.x,
+            rect.position.y,
+            rect.width,
+            rect.height
+          );
         });
         context.closePath();
       }
@@ -157,13 +176,26 @@
       constructor() {
         this.squares = [];
         this.fakeCode = new FakeCode();
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 30; i++) {
           this.squares.push(new FloatingSquare());
         }
       }
       update() {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        this.squares.forEach((square) => square.update());
+        let previousPos;
+        this.squares.forEach((square) => {
+          const currentPos = square.rect.center();
+          square.update();
+          if (previousPos instanceof Vector) {
+            context.beginPath();
+            context.strokeStyle = "rgba(255, 255, 255, 0.05)";
+            context.moveTo(previousPos.x, previousPos.y);
+            context.lineTo(currentPos.x, currentPos.y);
+            context.stroke();
+            context.closePath();
+          }
+          previousPos = square.rect.center();
+        });
         this.fakeCode.update();
       }
     }

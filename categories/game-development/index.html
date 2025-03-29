@@ -29,11 +29,9 @@
     --font-serif:
       "Domine", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   }
-  #post h2,
   #post h3,
-  #post h4,
-  #post pre {
-    @apply mb-5;
+  #post h4 {
+    @apply mb-2;
   }
   #post p,
   #post pre,
@@ -41,7 +39,7 @@
     @apply mb-7;
   }
   #post h2 {
-    @apply font-bold text-3xl tracking-tighter;
+    @apply font-bold mb-5 text-3xl tracking-tighter;
   }
   #post h3 {
     @apply font-bold text-2xl tracking-tighter;
@@ -62,13 +60,16 @@
     @apply border-8 border-neutral-900;
   }
   #post #table-of-contents {
-    @apply bg-neutral-950 mb-6 mx-auto p-4 text-gray-400;
+    @apply border border-neutral-800 bg-neutral-900 mb-8 mx-auto p-4;
   }
   #post #table-of-contents ol {
-    @apply list-decimal list-inside mt-2;
+    @apply list-decimal list-inside mt-2 text-neutral-400;
   }
   #post #table-of-contents ol a:hover {
     @apply underline;
+  }
+  #post #table-of-contents ol li {
+    @apply mt-1;
   }
 </style>
 
@@ -77,29 +78,30 @@
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   </head>
-  <body class="bg-black text-gray-300">
-    <header class="border-b border-lime-900 px-4">
-  <div class="flex items-center justify-between max-w-4xl mx-auto py-4">
-    <a class="font-extrabold text-gray-200 text-xl tracking-tighter" data-scrambled href="/" title="Software Development and DevOps Insights | jfmelo.com"
-      >jfmelo</a
-    >
-    
-    <ul class="flex">
+  <body class="bg-black text-slate-300">
+    <canvas class="mx-auto"></canvas>
+    <main class="absolute top-0 w-full">
+      <header class="flex items-center justify-between p-4">
+  <a
+    class="font-extrabold font-ono text-slate-200 text-2xl tracking-tighter"
+    href="/"
+    title="Software Development and DevOps Insights | jfmelo.com"
+    ><span class="text-sky-500">jf</span>melo<span
+      class="animate-pulse text-4xl"
+      aria-hidden="true"
+      >&#9646;</span
+    ></a
+  >
+  
+    <ul class="flex font-semibold">
     <li>
-      <a class="block hover:bg-neutral-950 hover:text-white px-4 py-2 rounded" href="/posts/">Posts</a>
-    </li>
-    <li>
-      <a class="block hover:bg-neutral-950 hover:text-white px-4 py-2 rounded" href="/categories/">Categories</a>
-    </li>
-    <li>
-      <a class="block hover:bg-neutral-950 hover:text-white px-4 py-2 rounded" href="/tags/">Tags</a>
+      <a class="block hover:bg-white hover:text-slate-950 px-4 py-2 rounded" href="/posts/">Blog</a>
     </li>
     </ul>
 
-  </div>
 </header>
 
-    <main>
+      <main>
 <section class="lg:px-0 max-w-2xl mx-auto px-4 py-20">
   <ul class="flex mb-6 text-gray-600 text-sm">
   <li>
@@ -136,55 +138,111 @@
     
       <article class="border-t border-neutral-900 py-8">
         <h2 class="font-bold text-2xl mb-3 tracking-tighter">
-          <a href="/posts/copilot-nearly-erased-my-coding-memory/">Copilot Nearly Erased My Coding Memory</a>
+          <a href="/posts/eat-your-own-cooking-self-hosting-compilers/">Eat Your Own Cooking Self Hosting Compilers</a>
         </h2>
-        <a href="/posts/copilot-nearly-erased-my-coding-memory/"> Does not matter whether you are junior, medior, or senior, Copilot will erase your coding memory. </a>
+        <a href="/posts/eat-your-own-cooking-self-hosting-compilers/"> <p>Title: Understanding Self-Hosting Languages and Compilers: A Deep Dive</p>
+<p>I. Introduction</p>
+<p>Brief definition of self-hosting languages and compilers
+Importance and significance in software development
+Brief overview of what to expect from the article/post
+II. What Is Self-Hosting?</p>
+<p>Clear definition and concepts
+Compiler written in the language it compiles
+Language capable of compiling its own compiler
+Historical background
+Early examples (e.g., Lisp, C, Pascal)
+The relationship between bootstrapping and self-hosting
+III. Why Self-Host? - Motivations &amp; Benefits</p> </a>
         <div class="mt-4 text-gray-500 text-sm">
            
-          <span>3 minutes to read</span>
+          <span>2 minutes to read</span>
           <span aria-hidden="true">&bull;</span>
-          <time datetime="2025-02-22T13:23:27&#43;01:00">February 22, 2025</time>
+          <time datetime="2025-03-16T10:57:24&#43;01:00">March 16, 2025</time>
         </div>
       </article>
     
   
 </section>
 </main>
-    <footer class="bg-neutral-900 py-10 text-center text-neutral-500 text-sm">
-  <p xmlns:cc="http://creativecommons.org/ns#">
-    &copy; 2025
-    <a
-      rel="cc:attributionURL dct:creator"
-      property="cc:attributionName"
-      href="https://dudemelo.github.io"
-      >JFMelo</a
-    >. All rights reserved by
-    <a
-      href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
-      target="_blank"
-      rel="license noopener noreferrer"
-      >CC BY-SA 4.0
-      <img
-        class="inline opacity-40 w-5"
-        src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
-        alt=""
-      />
-      <img
-        class="inline opacity-40 w-5"
-        src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
-        alt=""
-      />
-      <img
-        class="inline opacity-40 w-5"
-        src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
-        alt=""
-      />
-    </a>
-  </p>
+      <footer class="gap-y-10 grid lg:gap-20 lg:grid-cols-3 lg:p-20 px-4 py-10 sm:grid-cols-2 text-neutral-500">
+  <div class="order-last lg:order-first">
+    2025 &copy; jfmelo
+    <p class="text-sm" xmlns:cc="http://creativecommons.org/ns#">
+      All rights reserved by
+      <a
+        href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1"
+        target="_blank"
+        rel="license noopener noreferrer"
+        >CC BY-SA 4.0
+    </p>
+    <p>
+        <img
+          class="inline opacity-40 w-5"
+          src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+          alt=""
+        />
+        <img
+          class="inline opacity-40 w-5"
+          src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+          alt=""
+        />
+        <img
+          class="inline opacity-40 w-5"
+          src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
+          alt=""
+        />
+      </a>
+    </p>
+  </div>
+  <nav>
+    <h3 class="font-bold mb-4">Categories</h3>
+    <ul class="[&>li]:mb-2 [&>li>a]:hover:underline">
+      
+      <li><a href="http://localhost:1313/categories/game-development/">Game Development</a></li>
+      
+      <li><a href="http://localhost:1313/categories/open-source/">Open-Source</a></li>
+      
+      <li><a href="http://localhost:1313/categories/software-development/">Software Development</a></li>
+      
+      <li><a href="http://localhost:1313/categories/web-development/">Web Development</a></li>
+      
+      <li><a href="/categories">All categories</a></li>
+    </ul>
+  </nav>
+  <nav>
+    <h3 class="font-bold mb-4">Tags</h3>
+    <ul class="gap-x-4 gap-y-2 grid grid-cols-2 sm:grid-cols-3 [&>li>a]:hover:underline">
+      
+      <li>#<a href="http://localhost:1313/tags/ai/">AI</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/copilot/">Copilot</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/design/">Design</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/git/">Git</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/github/">GitHub</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/javascript/">JavaScript</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/node.js/">Node.js</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/npm/">NPM</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/programming/">Programming</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/typescript/">TypeScript</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/vite/">Vite</a></li>
+      
+      <li><a href="/tags">All tags</a></li>
+    </ul>
+  </nav>
 </footer>
 
       <script src="/js/main.js"></script>
 
 
+    </main>
   </body>
 </html>

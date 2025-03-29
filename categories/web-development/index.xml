@@ -6,14 +6,14 @@
     <description>Recent content in Web Development on Software Development and DevOps Insights | jfmelo.com</description>
     <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 09 Mar 2024 17:13:15 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 10:57:24 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/web-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024</title>
-      <link>http://localhost:1313/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/</link>
-      <pubDate>Sat, 09 Mar 2024 17:13:15 +0100</pubDate>
-      <guid>http://localhost:1313/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/</guid>
-      <description>All you need to create and share your Javacript or Typescript library with the Open-source community.</description>
+      <title>Eat Your Own Cooking Self Hosting Compilers</title>
+      <link>http://localhost:1313/posts/eat-your-own-cooking-self-hosting-compilers/</link>
+      <pubDate>Sun, 16 Mar 2025 10:57:24 +0100</pubDate>
+      <guid>http://localhost:1313/posts/eat-your-own-cooking-self-hosting-compilers/</guid>
+      <description>&lt;p&gt;Title: Understanding Self-Hosting Languages and Compilers: A Deep Dive&lt;/p&gt;&#xA;&lt;p&gt;I. Introduction&lt;/p&gt;&#xA;&lt;p&gt;Brief definition of self-hosting languages and compilers&#xA;Importance and significance in software development&#xA;Brief overview of what to expect from the article/post&#xA;II. What Is Self-Hosting?&lt;/p&gt;&#xA;&lt;p&gt;Clear definition and concepts&#xA;Compiler written in the language it compiles&#xA;Language capable of compiling its own compiler&#xA;Historical background&#xA;Early examples (e.g., Lisp, C, Pascal)&#xA;The relationship between bootstrapping and self-hosting&#xA;III. Why Self-Host? - Motivations &amp;amp; Benefits&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

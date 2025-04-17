@@ -6,6 +6,9 @@
     canvas.width = document.body.clientWidth;
     canvas.height = 450;
     const context = canvas.getContext("2d");
+    window.addEventListener("resize", () => {
+      canvas.width = document.body.clientWidth;
+    });
     class ScrambleText {
       /** @param {HTMLElement} el **/
       constructor(el) {
@@ -112,7 +115,7 @@
         this.reset();
       }
       getRandomSpeed() {
-        return Math.random() * 0.8 * (0.8 - 0.4) + 0.4 * (-1 * Math.round(Math.random()));
+        return Math.random() * 0.6 * (0.6 - 0.2) + 0.2 * (-1 * Math.round(Math.random()));
       }
       reset() {
         const size = Math.random() * (20 - 10) + 5;
@@ -129,7 +132,7 @@
         }
         this.rect.position.add(this.velocity);
         context.beginPath();
-        context.fillStyle = "rgba(255, 255, 255, 0.1)";
+        context.fillStyle = "rgba(0, 130, 250, 0.2)";
         context.fillRect(
           this.rect.position.x,
           this.rect.position.y,
@@ -141,7 +144,7 @@
     }
     class FakeCode {
       constructor() {
-        this.amountRects = 10;
+        this.amountRects = 20;
         this.spacing = 8;
         this.rects = [];
         for (let i = 0; i < this.amountRects; i++) {
@@ -155,7 +158,7 @@
       }
       update() {
         context.beginPath();
-        context.fillStyle = "rgba(150, 150, 150, 0.3)";
+        context.fillStyle = "rgba(0, 130, 250, 0.2)";
         this.rects.forEach((rect) => {
           if (rect.position.y <= 0) {
             rect.width = this.getRandomWidth();
@@ -188,7 +191,7 @@
           square.update();
           if (previousPos instanceof Vector) {
             context.beginPath();
-            context.strokeStyle = "rgba(255, 255, 255, 0.05)";
+            context.strokeStyle = "rgba(0, 130, 250, 0.12)";
             context.moveTo(previousPos.x, previousPos.y);
             context.lineTo(currentPos.x, currentPos.y);
             context.stroke();

@@ -1,0 +1,270 @@
+<!doctype html>
+<html
+  lang="en-US"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href="http://localhost:1313/tools/basal-metabolic-rate/" />
+<link rel="alternate" hreflang="en" href="https://jfmelo.com" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Ledger&display=swap"
+  rel="stylesheet"
+/>
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css2?family=Ledger&display=swap");
+</style>
+<style type="text/tailwindcss">
+  @theme {
+    --font-serif:
+      "Domine", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  #post h3,
+  #post h4 {
+    @apply mb-2;
+  }
+  #post p,
+  #post pre,
+  #post hr {
+    @apply mb-7;
+  }
+  #post h2 {
+    @apply font-bold mb-5 text-3xl tracking-tighter;
+  }
+  #post h3 {
+    @apply font-bold text-2xl tracking-tighter;
+  }
+  #post h4 {
+    @apply font-bold text-xl tracking-tighter;
+  }
+  #post p {
+    @apply font-serif text-lg/8;
+  }
+  #post p a {
+    @apply underline;
+  }
+  #post pre {
+    @apply font-mono overflow-auto p-5 rounded-xl;
+  }
+  #post hr {
+    @apply border-8 border-slate-900;
+  }
+  #post #table-of-contents {
+    @apply bg-slate-900/50 mb-8 mx-auto p-8 rounded-xl;
+  }
+  #post #table-of-contents ol {
+    @apply list-decimal list-inside mt-2 text-slate-400;
+  }
+  #post #table-of-contents ol a:hover {
+    @apply underline;
+  }
+  #post #table-of-contents ol li {
+    @apply mt-1;
+  }
+</style>
+
+
+<title>Basal Metabolic Rate | Software Development and DevOps Insights | jfmelo.com</title>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-200">
+    <canvas class="mx-auto"></canvas>
+    <div class="absolute top-0 w-full">
+      <header
+  class="border-b-4 border-slate-900 flex items-center justify-between p-4"
+>
+  <a
+    class="font-extrabold font-ono text-slate-200 text-2xl tracking-tighter"
+    href="/"
+    title="Software Development and DevOps Insights | jfmelo.com"
+    ><span class="text-sky-500">jf</span>melo<span
+      class="animate-pulse text-4xl"
+      aria-hidden="true"
+      >&#9646;</span
+    ></a
+  >
+  
+    <ul class="flex font-semibold gap-x-4">
+    <li>
+      <a class="block hover:bg-white hover:text-slate-950 px-4 py-2 rounded transition-colors" href="/">Home</a>
+    </li>
+    <li>
+      <a class="block hover:bg-white hover:text-slate-950 px-4 py-2 rounded transition-colors" href="/posts/">Blog</a>
+    </li>
+    <li>
+      <a aria-current="page" class="block px-4 py-2 bg-white rounded text-slate-950" href="/tools/">Tools</a>
+    </li>
+    </ul>
+
+</header>
+
+      <main class="max-w-3xl mx-auto px-4">
+
+<section class="lg:px-0 max-w-2xl mx-auto px-4 pt-20">
+  <ul class="flex mb-6 text-slate-600 text-sm">
+  <li>
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+        <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z" clip-rule="evenodd" />
+      </svg>
+    </a>
+  </li>
+      <li class="flex">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+          <path fill-rule="evenodd" d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z" clip-rule="evenodd" />
+        </svg>
+        <a href="/tools/">
+          Tools
+        </a>
+      </li>
+  <li class="flex">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-4">
+      <path fill-rule="evenodd" d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z" clip-rule="evenodd" />
+    </svg>
+    Basal Metabolic Rate
+  </li>
+</ul>
+
+
+  <article id="post">
+    <h1 class="font-extrabold leading-2xl mb-5 text-5xl/15 tracking-tighter">
+      Basal Metabolic Rate
+    </h1>
+    <div
+      class="border-slate-900 border-b border-t py-3 text-slate-500 text-sm"
+    >
+       
+      <span>0 min read</span>
+      <span aria-hidden="true">&bull;</span>
+      <time datetime="2024-03-09T17:13:15&#43;01:00">March 9, 2024</time>
+    </div>
+    <div class="mb-6"></div>
+    <p>All you need to create and share your Javacript or Typescript library with the Open-source community.</p>
+    <article id="table-of-contents">
+  <strong>Table of contents</strong>
+  <nav id="TableOfContents"></nav>
+</article>
+  
+<div class="border-t border-slate-900 flex gap-4 mb-20 pt-10 text-gray-500">
+  <div>Tags:</div>
+  <ul>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/javascript/"
+        >JavaScript</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/node.js/"
+        >Node.js</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/npm/"
+        >NPM</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/typescript/"
+        >TypeScript</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/vite/"
+        >Vite</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/programming/"
+        >Programming</a
+      >
+    </li>
+  </ul>
+</div>
+
+  </article>
+</section>
+
+</main>
+      <footer
+  class="gap-y-10 grid lg:gap-20 lg:grid-cols-3 lg:p-20 px-4 py-10 sm:grid-cols-2 text-slate-500"
+>
+  <div class="order-last lg:order-first">
+    2025 &copy; jfmelo
+    <p class="text-sm" xmlns:cc="http://creativecommons.org/ns#">
+      All rights reserved.
+    </p>
+  </div>
+  <nav>
+    <h3 class="font-bold mb-4">Categories</h3>
+    <ul class="[&>li]:mb-2 [&>li>a]:hover:underline">
+      
+      <li><a href="http://localhost:1313/categories/software-development/">Software Development</a></li>
+      
+      <li><a href="http://localhost:1313/categories/tools/">Tools</a></li>
+      
+      <li><a href="/categories">All categories</a></li>
+    </ul>
+  </nav>
+  <nav>
+    <h3 class="font-bold mb-4">Tags</h3>
+    <ul
+      class="gap-x-4 gap-y-2 grid grid-cols-2 sm:grid-cols-3 [&>li>a]:hover:underline"
+    >
+      
+      <li>#<a href="http://localhost:1313/tags/design/">Design</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/git/">Git</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/github/">GitHub</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/javascript/">JavaScript</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/node.js/">Node.js</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/npm/">NPM</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/programming/">Programming</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/typescript/">TypeScript</a></li>
+      
+      <li>#<a href="http://localhost:1313/tags/vite/">Vite</a></li>
+      
+      <li><a href="/tags">All tags</a></li>
+    </ul>
+  </nav>
+</footer>
+
+      <script src="/js/main.js"></script>
+
+
+    </div>
+  </body>
+</html>

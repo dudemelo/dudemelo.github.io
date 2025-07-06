@@ -1,4 +1,44 @@
-<!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="All you need to create and share your Javacript or Typescript library with the Open-source community."><meta property="og:title" content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024"><meta property="og:description" content="All you need to create and share your Javacript or Typescript library with the Open-source community."><meta property="og:url" content="https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/"><meta name=twitter:title content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024"><meta name=twitter:description content="All you need to create and share your Javacript or Typescript library with the Open-source community."><meta name=robots content="index, follow"><link rel=canonical href=https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/><link rel=alternate hreflang=en href=https://jfmelo.com><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Ledger&display=swap" rel=stylesheet><style type=text/css>@import "https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"</style><style type=text/tailwindcss>
+<!doctype html>
+<html
+  lang="en-US"
+  dir="ltr"
+>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta name="description" content="All you need to create and share your Javascript or Typescript library with the Open-source community." />
+<meta property="og:title" content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024" />
+<meta property="og:description" content="All you need to create and share your Javascript or Typescript library with the Open-source community." />
+
+<meta property="og:url" content="https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/" />
+
+<meta name="twitter:title" content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024" />
+<meta name="twitter:description" content="All you need to create and share your Javascript or Typescript library with the Open-source community." />
+
+
+
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href="https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/" />
+<link rel="alternate" hreflang="en" href="https://jfmelo.com" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Ledger&display=swap"
+  rel="stylesheet"
+/>
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
+</style>
+<style type="text/tailwindcss">
   @theme {
     --font-serif:
       "Roboto Serif", ui-serif, Georgia, Cambria, "Times New Roman", Times,
@@ -56,69 +96,352 @@
       @apply mb-4 ml-4;
     }
   }
-</style><title>6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024 | Software Development and DevOps Insights | jfmelo.com
-</title><script src=https://unpkg.com/@tailwindcss/browser@4></script></head><body class="bg-slate-950 overflow-x-hidden text-slate-200"><canvas class=mx-auto></canvas><div class="absolute top-0 w-full"><header class="border-b-3 border-slate-900 flex items-center justify-between p-4"><a class="font-extrabold font-ono text-slate-200 text-2xl tracking-tighter" href=/ title="Software Development and DevOps Insights | jfmelo.com"><span class=text-sky-500>jf</span>melo</a><ul class="flex font-semibold gap-x-4"><li><a class="block hover:bg-white hover:text-slate-950 px-4 py-2 rounded transition-colors" href=/>Home</a></li><li><a aria-current=page class="block px-4 py-2 bg-white rounded text-slate-950" href=/posts/>Blog</a></li><li><a class="block hover:bg-white hover:text-slate-950 px-4 py-2 rounded transition-colors" href=/tools/>Tools</a></li></ul></header><main><section class="lg:px-0 max-w-2xl mx-auto px-4 pt-20"><ul class="flex mb-6 text-slate-600 text-sm"><li><a href=/><svg viewBox="0 0 20 20" fill="currentcolor" class="size-4"><path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414.0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd"/></svg></a></li><li class=flex><svg viewBox="0 0 20 20" fill="currentcolor" class="size-4"><path fill-rule="evenodd" d="M12.528 3.047a.75.75.0 01.449.961L8.433 16.504a.75.75.0 11-1.41-.512l4.544-12.496a.75.75.0 01.961-.449z" clip-rule="evenodd"/></svg>
-<a href=/posts/>Posts</a></li><li class=flex><svg viewBox="0 0 20 20" fill="currentcolor" class="size-4"><path fill-rule="evenodd" d="M12.528 3.047a.75.75.0 01.449.961L8.433 16.504a.75.75.0 11-1.41-.512l4.544-12.496a.75.75.0 01.961-.449z" clip-rule="evenodd"/></svg>
-6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024</li></ul><article id=post><h1 class="font-extrabold leading-2xl mb-5 text-5xl/15 tracking-tighter">6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024</h1><div class="border-slate-900 border-b border-t py-3 text-slate-500 text-sm"><span>7 min read</span>
-<span aria-hidden=true>&bull;</span>
-<time datetime=2024-03-09T17:13:15+01:00>March 9, 2024</time></div><div class=mb-6></div><p>All you need to create and share your Javacript or Typescript library with the Open-source community.</p><article id=table-of-contents><strong>Table of contents</strong><nav id=TableOfContents><ol><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#step-1-lay-a-strong-foundation-with-a-solid-scaffolding>Step 1: Lay a strong foundation with a solid scaffolding</a></li><li><a href=#step-2-understand-the-structure-of-your-library>Step 2: Understand the structure of your library</a></li><li><a href=#step-3-get-things-cleaned-up>Step 3: Get things cleaned up</a></li><li><a href=#step-4-write-and-test-your-library>Step 4: Write and test your library</a></li><li><a href=#step-5-build-your-library>Step 5: Build your library</a></li><li><a href=#step-6-publish-your-library>Step 6: Publish your library</a></li><li><a href=#conclusion>Conclusion</a></li></ol></nav></article><h2 id=prerequisites>Prerequisites</h2><p>Make sure that Node.js and NPM are installed on your computer before you start this step-by-step guide. To publish your library, you will also need an NPM user account.</p><p>Git and GitHub are not necessary, but you will need them if you want to share your library with other developers and let them contribute to the source code of your library.</p><h2 id=step-1-lay-a-strong-foundation-with-a-solid-scaffolding>Step 1: Lay a strong foundation with a solid scaffolding</h2><p>It is important to build a strong foundation for the code before diving into it.</p><p>At this stage, we usually do a lot of research on how other libraries organize their code, find the best ways to do things, and test tools for making bundles and setting up live servers.</p><p>Even though Vite is fairly new to the JavaScript ecosystem — it was made in 2020 — it has quickly become popular among front-end developers and for good reason.</p><p>Some of the great things about Vite are its fast live server, pre-configured bundles, and many other features. In addition, it can easily set up a simple but strong structure for your library. You can quickly get your library up and running by executing the command below and following the on-screen instructions.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm create vite
-</span></span></code></pre></div><h2 id=step-2-understand-the-structure-of-your-library>Step 2: Understand the structure of your library</h2><h3 id=the-root-directory>The root directory</h3><p>The name of the root directory is the name you choose for your library.</p><h3 id=node-modules-directory>Node modules directory</h3><p>NPM installs all of the dependencies your library needs in the “node_modules” directory.</p><p>Under “devDependencies” and “dependencies” in the “package.json” file, you can find all the dependencies your library needs.</p><h3 id=the-public-directory-and-indexhtml-file>The public directory and index.html file</h3><p>The “public” directory and “index.html” file are only used to test your library through the browser when you run the following command to turn on the live server:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm run dev
-</span></span></code></pre></div><h3 id=source-code-directory>Source code directory</h3><p>All the source code for your library will go in the source directory. It could be TypeScript, JavaScript, CSS, SVG, or something else.</p><p>A few files for the demo app that Vite makes when you set up the library are already in the source directory. Only the “vite-env.d.ts” file is not for this demo app. It is a TypeScript declaration file, you can set up global variables and types for your library.</p><h3 id=the-gitignore-file>The .gitignore file</h3><p>The “.gitignore” file tells Git which files and directories the version control system (VCS) should not look at.</p><h3 id=the-packagejson-and-package-lockjson-files>The package.json and package-lock.json files</h3><p>The “package.json” file is a metadata file that NPM uses to describe things about a project, like scripts, dependencies, versions, and so on.</p><p>The “package-lock.json” file, on the other hand, is made when we install the dependencies in a JavaScript project. It contains the exact version of each dependency that is installed.</p><h3 id=tsconfigjson>tsconfig.json</h3><p>The “tsconfig.json” is used to set the compiler options in TypeScript projects. It lets you set things like the target ECMAScript version, the module system, and the paths that should be compiled or not compiled.</p><h2 id=step-3-get-things-cleaned-up>Step 3: Get things cleaned up</h2><p>When the scaffolding is made, Vite adds a demo app by default. Let’s get rid of everything that has to do with this demo app.</p><p>First, let’s get rid of the “vite.svg” file that is in the “public” directory. You could even get rid of the whole “public” directory if you do not need any assets to test your library.</p><p>Let’s remove all the files that are in the “src” directory. Only “main.ts” could be kept because we can erase its content and write our code in it.</p><h2 id=step-4-write-and-test-your-library>Step 4: Write and test your library</h2><p>Now that you understand the structure of your library and have gotten rid of all the files that are not needed, it is time to get to work and write the code.</p><p>To give you a practical example, I created a library that converts values to and from percentages. Here is a sneak peek at what this library might look like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> toPercentage(value: <span style=color:#8be9fd>number</span>, total: <span style=color:#8be9fd>number</span>)<span style=color:#ff79c6>:</span> <span style=color:#8be9fd>number</span> {
-</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> (value <span style=color:#ff79c6>/</span> total) <span style=color:#ff79c6>*</span> <span style=color:#bd93f9>100</span>;
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8be9fd;font-style:italic>function</span> fromPercentage(percentage: <span style=color:#8be9fd>number</span>, total: <span style=color:#8be9fd>number</span>)<span style=color:#ff79c6>:</span> <span style=color:#8be9fd>number</span> {
-</span></span><span style=display:flex><span>  <span style=color:#ff79c6>return</span> (percentage <span style=color:#ff79c6>/</span> <span style=color:#bd93f9>100</span>) <span style=color:#ff79c6>*</span> total;
-</span></span><span style=display:flex><span>}
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#ff79c6>export</span> { toPercentage, fromPercentage };
-</span></span></code></pre></div><p>Using a live server is one way to make sure that your code works right. I changed the “index.html” file in my library so it looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#ff79c6>&lt;!doctype html&gt;</span>
-</span></span><span style=display:flex><span>&lt;<span style=color:#ff79c6>html</span> <span style=color:#50fa7b>lang</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;en&#34;</span>&gt;
-</span></span><span style=display:flex><span>  &lt;<span style=color:#ff79c6>head</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#ff79c6>meta</span> <span style=color:#50fa7b>charset</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;UTF-8&#34;</span> /&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#ff79c6>meta</span> <span style=color:#50fa7b>name</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;viewport&#34;</span> <span style=color:#50fa7b>content</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;width=device-width, initial-scale=1.0&#34;</span> /&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#ff79c6>title</span>&gt;Percentage&lt;/<span style=color:#ff79c6>title</span>&gt;
-</span></span><span style=display:flex><span>  &lt;/<span style=color:#ff79c6>head</span>&gt;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  &lt;<span style=color:#ff79c6>body</span>&gt;
-</span></span><span style=display:flex><span>    The percentage of 10 out of 100 is &lt;<span style=color:#ff79c6>span</span> <span style=color:#50fa7b>id</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;percentage&#34;</span>&gt;&lt;/<span style=color:#ff79c6>span</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#ff79c6>script</span> <span style=color:#50fa7b>type</span><span style=color:#ff79c6>=</span><span style=color:#f1fa8c>&#34;module&#34;</span>&gt;
-</span></span><span style=display:flex><span>      <span style=color:#ff79c6>import</span> { toPercentage } from <span style=color:#f1fa8c>&#34;./src/main&#34;</span>;
-</span></span><span style=display:flex><span>      <span style=color:#8be9fd;font-style:italic>document</span>.getElementById(<span style=color:#f1fa8c>&#34;percentage&#34;</span>).innerText <span style=color:#ff79c6>=</span> toPercentage(<span style=color:#bd93f9>10</span>, <span style=color:#bd93f9>100</span>);
-</span></span><span style=display:flex><span>    &lt;/<span style=color:#ff79c6>script</span>&gt;
-</span></span><span style=display:flex><span>  &lt;/<span style=color:#ff79c6>body</span>&gt;
-</span></span><span style=display:flex><span>&lt;/<span style=color:#ff79c6>html</span>&gt;
-</span></span></code></pre></div><p>Try the following command to see if your library works as it should:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm run dev
-</span></span></code></pre></div><h2 id=step-5-build-your-library>Step 5: Build your library</h2><p>The build process will transform your source code into a format that can be easily used in any JavaScript environment.</p><p>One of the scripts that Vite adds automatically to your “package.json” file is the build script. All you have to do is run the following command:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm run build
-</span></span></code></pre></div><p>When you run the build command, this is what you see:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>✓ <span style=color:#bd93f9>4</span> modules transformed.
-</span></span><span style=display:flex><span>dist/index.html 0.35 kB               │ gzip: 0.25 kB
-</span></span><span style=display:flex><span>dist/assets/index-CdKwhZ4x.js 0.80 kB │ gzip: 0.45 kB
-</span></span><span style=display:flex><span>✓ built in 96ms
-</span></span></code></pre></div><p>Vite created the “dist” directory and put an “index.html” and a JavaScript file with a random name in the “dist/assets/” directory.</p><p>It is fine to use this build for regular projects, but not for libraries. Let’s make a Vite configuration file that tells Vite how to build a library.</p><p>Create the <em>vite.config.ts</em> file in the root directory with the following content:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ts data-lang=ts><span style=display:flex><span><span style=color:#ff79c6>import</span> { defineConfig } <span style=color:#ff79c6>from</span> <span style=color:#f1fa8c>&#34;vite&#34;</span>;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#ff79c6>export</span> <span style=color:#ff79c6>default</span> defineConfig({
-</span></span><span style=display:flex><span>  build<span style=color:#ff79c6>:</span> {
-</span></span><span style=display:flex><span>    lib<span style=color:#ff79c6>:</span> {
-</span></span><span style=display:flex><span>      entry<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;src/main.ts&#34;</span>,
-</span></span><span style=display:flex><span>      name<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;percentage&#34;</span>,
-</span></span><span style=display:flex><span>      fileName<span style=color:#ff79c6>:</span> <span style=color:#f1fa8c>&#34;percentage&#34;</span>,
-</span></span><span style=display:flex><span>    },
-</span></span><span style=display:flex><span>  },
-</span></span><span style=display:flex><span>});
-</span></span></code></pre></div><p>The above configuration specifies that we want to build only the “main.ts” file and the name of the generated files.</p><p>Please keep in mind that “pctage” is the name I chose for my library. Instead, you should use the name of your library.</p><p>If you run the build command again, this is what you should see:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>✓ <span style=color:#bd93f9>1</span> modules transformed.
-</span></span><span style=display:flex><span>dist/pctage.js 0.14 kB      │ gzip: 0.11 kB
-</span></span><span style=display:flex><span>dist/pctage.umd.cjs 0.39 kB │ gzip: 0.26 kB
-</span></span><span style=display:flex><span>✓ built in 69ms
-</span></span></code></pre></div><p>Now, Vite created two files in the dist directory. The “pctage.js” file is in CommonJS format for Node.js environments, and the “pctage.umd.cjs” file is in UMD format for browser environments.</p><h2 id=step-6-publish-your-library>Step 6: Publish your library</h2><p>Make sure that only the important files are published so that your library stays small and easy to use. By making a “.npmignore” file, you can tell NPM which files it should not publish.</p><p>In the root directory, create the “.npmignore” file with the following content:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>public/
-</span></span><span style=display:flex><span>src/
-</span></span><span style=display:flex><span>index.html
-</span></span><span style=display:flex><span>vite.config.ts
-</span></span></code></pre></div><p>Make sure you change the “private” property in your “package.json” to “false” if you want the library to be open to everyone.</p><p>You should also add the “main” property to your “package.json”. For example:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
-</span></span><span style=display:flex><span>  <span style=color:#6272a4>//...
-</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>  <span style=color:#ff79c6>&#34;main&#34;</span>: <span style=color:#f1fa8c>&#34;pctage.js&#34;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#ff79c6>&#34;private&#34;</span>: <span style=color:#ff79c6>false</span>
-</span></span><span style=display:flex><span>  <span style=color:#6272a4>//...
-</span></span></span><span style=display:flex><span><span style=color:#6272a4></span>}
-</span></span></code></pre></div><p>This way, when someone else runs <code>require('your-package')</code>, they will get whatever your &ldquo;main&rdquo; module exports.</p><p>Also, make sure you include important details like the description, keywords, homepage, bugs, and license information. To find out more, read the <a href=https://docs.npmjs.com/cli/v10/configuring-npm/package-json>official documentation</a>.</p><p>If you are not already logged into your NPM account on your computer, you will need to run the command below to access NPM. You will be asked to enter your username and password for your NPM account when you run this command.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm adduser
-</span></span></code></pre></div><p>Following the Semantic Versioning rules, you should raise the version number every time you need to publish your library. In your “package.json” file, you need to change the version number to reflect whether the changes are major, minor, or patch updates.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm publish
-</span></span></code></pre></div><hr><h2 id=conclusion>Conclusion</h2><p>At first, it might seem hard to create and publish your own library. But it is a lot easier to handle if you break the process down.</p><p>To make something truly valuable, you need to do research. Look through existing libraries to get ideas and learn the best ways to do things.</p><p>I really want to see what you have created. Leave a comment below with the libraries you have published.</p><p>Happy coding!</p></article><div class="border-t border-slate-900 flex gap-4 mb-20 pt-10 text-gray-500"><div>Tags:</div><ul><li class="inline-block mb-2"><a class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full" href=/tags/javascript/>JavaScript</a></li><li class="inline-block mb-2"><a class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full" href=/tags/node.js/>Node.js</a></li><li class="inline-block mb-2"><a class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full" href=/tags/npm/>NPM</a></li><li class="inline-block mb-2"><a class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full" href=/tags/typescript/>TypeScript</a></li><li class="inline-block mb-2"><a class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full" href=/tags/vite/>Vite</a></li><li class="inline-block mb-2"><a class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full" href=/tags/programming/>Programming</a></li></ul></div></section></main><footer class=text-slate-500><div class="flex gap-20 justify-center px-4 py-10"><nav><h3 class="font-bold mb-4">Tags</h3><ul class="gap-x-4 gap-y-2 grid grid-cols-2 sm:grid-cols-3 [&>li>a]:hover:underline"><li>#<a href=https://jfmelo.com/tags/bmr/>BMR</a></li><li>#<a href=https://jfmelo.com/tags/design/>Design</a></li><li>#<a href=https://jfmelo.com/tags/fitness/>Fitness</a></li><li>#<a href=https://jfmelo.com/tags/git/>Git</a></li><li>#<a href=https://jfmelo.com/tags/github/>GitHub</a></li><li>#<a href=https://jfmelo.com/tags/health/>Health</a></li><li>#<a href=https://jfmelo.com/tags/javascript/>JavaScript</a></li><li>#<a href=https://jfmelo.com/tags/metabolism/>Metabolism</a></li><li>#<a href=https://jfmelo.com/tags/node.js/>Node.js</a></li><li>#<a href=https://jfmelo.com/tags/npm/>NPM</a></li><li>#<a href=https://jfmelo.com/tags/nutrition/>Nutrition</a></li><li>#<a href=https://jfmelo.com/tags/programming/>Programming</a></li><li>#<a href=https://jfmelo.com/tags/typescript/>TypeScript</a></li><li>#<a href=https://jfmelo.com/tags/vite/>Vite</a></li><li><a href=/tags>All tags</a></li></ul></nav><nav><h3 class="font-bold mb-4">Categories</h3><ul class="[&>li]:mb-2 [&>li>a]:hover:underline"><li><a href=https://jfmelo.com/categories/software-development/>Software Development</a></li><li><a href=/categories>All categories</a></li></ul></nav></div><p class="bg-slate-900/30 py-10 text-center text-sm">2025 &copy; jfmelo. All rights reserved.</p></footer><script src=/js/main.49357aa9abe3d6a90f1f1daaa2ab701a49c6beab125f610d72e5a5611e75d960.js integrity="sha256-STV6qavj1qkPHx2qoqtwGknGvqsSX2ENcuWlYR512WA=" crossorigin=anonymous></script></div></body></html>
+</style>
+
+
+<title>
+  6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024 | Software Development and DevOps Insights | jfmelo.com
+</title>
+
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-black overflow-x-hidden text-slate-200">
+    <canvas class="mx-auto"></canvas>
+    <div class="absolute top-0 w-full z-10">
+      <header class="flex items-center justify-between max-w-4xl mb-4 mx-auto px-4 py-10">
+  <a
+    class="font-extrabold font-ono text-slate-200 text-3xl tracking-tight"
+    href="/"
+    title="Software Development and DevOps Insights | jfmelo.com"
+    >jfmelo</a
+  >
+  
+    <ul class="flex font-semibold gap-x-4 -skew-x-3">
+    <li>
+      <a class="block duration-300 hover:bg-white hover:text-slate-950 px-4 py-2 rounded transition-colors" href="/">Home</a>
+    </li>
+    <li>
+      <a aria-current="page" class="block px-4 py-2 bg-blue-300/60 rounded text-slate-950" href="/posts/">Blog</a>
+    </li>
+    <li>
+      <a class="block duration-300 hover:bg-white hover:text-slate-950 px-4 py-2 rounded transition-colors" href="/tools/">Tools</a>
+    </li>
+    </ul>
+
+</header>
+
+      <main>
+
+<section class="lg:px-0 max-w-2xl mx-auto px-4 pt-20">
+  <ul class="flex mb-6 text-slate-600 text-sm">
+  <li>
+    <a href="/">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="size-4"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </a>
+  </li>
+  <li class="flex">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="size-4"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+    <a href="/posts/"> Posts </a>
+  </li>
+  <li class="flex">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="size-4"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+    6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024
+  </li>
+</ul>
+
+
+  <article id="post">
+    <h1 class="font-extrabold leading-2xl mb-5 text-5xl/15 tracking-tighter">
+      6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024
+    </h1>
+    <div class="border-slate-900 border-b border-t py-3 text-slate-500 text-sm">
+       
+      <span>7 min read</span>
+      <span aria-hidden="true">&bull;</span>
+      <time datetime="2024-03-09T17:13:15&#43;01:00">March 9, 2024</time>
+    </div>
+    <div class="mb-6"></div>
+    <p>All you need to create and share your Javascript or Typescript library with the Open-source community.</p>
+    <article id="table-of-contents">
+  <strong>Table of contents</strong>
+  <nav id="TableOfContents">
+  <ol>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#step-1-lay-a-strong-foundation-with-a-solid-scaffolding">Step 1: Lay a strong foundation with a solid scaffolding</a></li>
+    <li><a href="#step-2-understand-the-structure-of-your-library">Step 2: Understand the structure of your library</a></li>
+    <li><a href="#step-3-get-things-cleaned-up">Step 3: Get things cleaned up</a></li>
+    <li><a href="#step-4-write-and-test-your-library">Step 4: Write and test your library</a></li>
+    <li><a href="#step-5-build-your-library">Step 5: Build your library</a></li>
+    <li><a href="#step-6-publish-your-library">Step 6: Publish your library</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</nav>
+</article>
+ <h2 id="prerequisites">Prerequisites</h2>
+<p>Make sure that Node.js and NPM are installed on your computer before you start this step-by-step guide. To publish your library, you will also need an NPM user account.</p>
+<p>Git and GitHub are not necessary, but you will need them if you want to share your library with other developers and let them contribute to the source code of your library.</p>
+<h2 id="step-1-lay-a-strong-foundation-with-a-solid-scaffolding">Step 1: Lay a strong foundation with a solid scaffolding</h2>
+<p>It is important to build a strong foundation for the code before diving into it.</p>
+<p>At this stage, we usually do a lot of research on how other libraries organize their code, find the best ways to do things, and test tools for making bundles and setting up live servers.</p>
+<p>Even though Vite is fairly new to the JavaScript ecosystem — it was made in 2020 — it has quickly become popular among front-end developers and for good reason.</p>
+<p>Some of the great things about Vite are its fast live server, pre-configured bundles, and many other features. In addition, it can easily set up a simple but strong structure for your library. You can quickly get your library up and running by executing the command below and following the on-screen instructions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm create vite
+</span></span></code></pre></div><h2 id="step-2-understand-the-structure-of-your-library">Step 2: Understand the structure of your library</h2>
+<h3 id="the-root-directory">The root directory</h3>
+<p>The name of the root directory is the name you choose for your library.</p>
+<h3 id="node-modules-directory">Node modules directory</h3>
+<p>NPM installs all of the dependencies your library needs in the “node_modules” directory.</p>
+<p>Under “devDependencies” and “dependencies” in the “package.json” file, you can find all the dependencies your library needs.</p>
+<h3 id="the-public-directory-and-indexhtml-file">The public directory and index.html file</h3>
+<p>The “public” directory and “index.html” file are only used to test your library through the browser when you run the following command to turn on the live server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm run dev
+</span></span></code></pre></div><h3 id="source-code-directory">Source code directory</h3>
+<p>All the source code for your library will go in the source directory. It could be TypeScript, JavaScript, CSS, SVG, or something else.</p>
+<p>A few files for the demo app that Vite makes when you set up the library are already in the source directory. Only the “vite-env.d.ts” file is not for this demo app. It is a TypeScript declaration file, you can set up global variables and types for your library.</p>
+<h3 id="the-gitignore-file">The .gitignore file</h3>
+<p>The “.gitignore” file tells Git which files and directories the version control system (VCS) should not look at.</p>
+<h3 id="the-packagejson-and-package-lockjson-files">The package.json and package-lock.json files</h3>
+<p>The “package.json” file is a metadata file that NPM uses to describe things about a project, like scripts, dependencies, versions, and so on.</p>
+<p>The “package-lock.json” file, on the other hand, is made when we install the dependencies in a JavaScript project. It contains the exact version of each dependency that is installed.</p>
+<h3 id="tsconfigjson">tsconfig.json</h3>
+<p>The “tsconfig.json” is used to set the compiler options in TypeScript projects. It lets you set things like the target ECMAScript version, the module system, and the paths that should be compiled or not compiled.</p>
+<h2 id="step-3-get-things-cleaned-up">Step 3: Get things cleaned up</h2>
+<p>When the scaffolding is made, Vite adds a demo app by default. Let’s get rid of everything that has to do with this demo app.</p>
+<p>First, let’s get rid of the “vite.svg” file that is in the “public” directory. You could even get rid of the whole “public” directory if you do not need any assets to test your library.</p>
+<p>Let’s remove all the files that are in the “src” directory. Only “main.ts” could be kept because we can erase its content and write our code in it.</p>
+<h2 id="step-4-write-and-test-your-library">Step 4: Write and test your library</h2>
+<p>Now that you understand the structure of your library and have gotten rid of all the files that are not needed, it is time to get to work and write the code.</p>
+<p>To give you a practical example, I created a library that converts values to and from percentages. Here is a sneak peek at what this library might look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> toPercentage(value: <span style="color:#8be9fd">number</span>, total: <span style="color:#8be9fd">number</span>)<span style="color:#ff79c6">:</span> <span style="color:#8be9fd">number</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> (value <span style="color:#ff79c6">/</span> total) <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">100</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> fromPercentage(percentage: <span style="color:#8be9fd">number</span>, total: <span style="color:#8be9fd">number</span>)<span style="color:#ff79c6">:</span> <span style="color:#8be9fd">number</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">return</span> (percentage <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">100</span>) <span style="color:#ff79c6">*</span> total;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">export</span> { toPercentage, fromPercentage };
+</span></span></code></pre></div><p>Using a live server is one way to make sure that your code works right. I changed the “index.html” file in my library so it looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;!doctype html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">html</span> <span style="color:#50fa7b">lang</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#ff79c6">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">charset</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;viewport&#34;</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;width=device-width, initial-scale=1.0&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#ff79c6">title</span>&gt;Percentage&lt;/<span style="color:#ff79c6">title</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#ff79c6">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#ff79c6">body</span>&gt;
+</span></span><span style="display:flex;"><span>    The percentage of 10 out of 100 is &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;percentage&#34;</span>&gt;&lt;/<span style="color:#ff79c6">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#ff79c6">script</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;module&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">import</span> { toPercentage } from <span style="color:#f1fa8c">&#34;./src/main&#34;</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#8be9fd;font-style:italic">document</span>.getElementById(<span style="color:#f1fa8c">&#34;percentage&#34;</span>).innerText <span style="color:#ff79c6">=</span> toPercentage(<span style="color:#bd93f9">10</span>, <span style="color:#bd93f9">100</span>);
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#ff79c6">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#ff79c6">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#ff79c6">html</span>&gt;
+</span></span></code></pre></div><p>Try the following command to see if your library works as it should:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm run dev
+</span></span></code></pre></div><h2 id="step-5-build-your-library">Step 5: Build your library</h2>
+<p>The build process will transform your source code into a format that can be easily used in any JavaScript environment.</p>
+<p>One of the scripts that Vite adds automatically to your “package.json” file is the build script. All you have to do is run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm run build
+</span></span></code></pre></div><p>When you run the build command, this is what you see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>✓ <span style="color:#bd93f9">4</span> modules transformed.
+</span></span><span style="display:flex;"><span>dist/index.html 0.35 kB               │ gzip: 0.25 kB
+</span></span><span style="display:flex;"><span>dist/assets/index-CdKwhZ4x.js 0.80 kB │ gzip: 0.45 kB
+</span></span><span style="display:flex;"><span>✓ built in 96ms
+</span></span></code></pre></div><p>Vite created the “dist” directory and put an “index.html” and a JavaScript file with a random name in the “dist/assets/” directory.</p>
+<p>It is fine to use this build for regular projects, but not for libraries. Let’s make a Vite configuration file that tells Vite how to build a library.</p>
+<p>Create the <em>vite.config.ts</em> file in the root directory with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#ff79c6">import</span> { defineConfig } <span style="color:#ff79c6">from</span> <span style="color:#f1fa8c">&#34;vite&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">default</span> defineConfig({
+</span></span><span style="display:flex;"><span>  build<span style="color:#ff79c6">:</span> {
+</span></span><span style="display:flex;"><span>    lib<span style="color:#ff79c6">:</span> {
+</span></span><span style="display:flex;"><span>      entry<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;src/main.ts&#34;</span>,
+</span></span><span style="display:flex;"><span>      name<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;percentage&#34;</span>,
+</span></span><span style="display:flex;"><span>      fileName<span style="color:#ff79c6">:</span> <span style="color:#f1fa8c">&#34;percentage&#34;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>The above configuration specifies that we want to build only the “main.ts” file and the name of the generated files.</p>
+<p>Please keep in mind that “pctage” is the name I chose for my library. Instead, you should use the name of your library.</p>
+<p>If you run the build command again, this is what you should see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>✓ <span style="color:#bd93f9">1</span> modules transformed.
+</span></span><span style="display:flex;"><span>dist/pctage.js 0.14 kB      │ gzip: 0.11 kB
+</span></span><span style="display:flex;"><span>dist/pctage.umd.cjs 0.39 kB │ gzip: 0.26 kB
+</span></span><span style="display:flex;"><span>✓ built in 69ms
+</span></span></code></pre></div><p>Now, Vite created two files in the dist directory. The “pctage.js” file is in CommonJS format for Node.js environments, and the “pctage.umd.cjs” file is in UMD format for browser environments.</p>
+<h2 id="step-6-publish-your-library">Step 6: Publish your library</h2>
+<p>Make sure that only the important files are published so that your library stays small and easy to use. By making a “.npmignore” file, you can tell NPM which files it should not publish.</p>
+<p>In the root directory, create the “.npmignore” file with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>public/
+</span></span><span style="display:flex;"><span>src/
+</span></span><span style="display:flex;"><span>index.html
+</span></span><span style="display:flex;"><span>vite.config.ts
+</span></span></code></pre></div><p>Make sure you change the “private” property in your “package.json” to “false” if you want the library to be open to everyone.</p>
+<p>You should also add the “main” property to your “package.json”. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">//...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>  <span style="color:#ff79c6">&#34;main&#34;</span>: <span style="color:#f1fa8c">&#34;pctage.js&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;private&#34;</span>: <span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#6272a4">//...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>}
+</span></span></code></pre></div><p>This way, when someone else runs <code>require('your-package')</code>, they will get whatever your &ldquo;main&rdquo; module exports.</p>
+<p>Also, make sure you include important details like the description, keywords, homepage, bugs, and license information. To find out more, read the <a href="https://docs.npmjs.com/cli/v10/configuring-npm/package-json">official documentation</a>.</p>
+<p>If you are not already logged into your NPM account on your computer, you will need to run the command below to access NPM. You will be asked to enter your username and password for your NPM account when you run this command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm adduser
+</span></span></code></pre></div><p>Following the Semantic Versioning rules, you should raise the version number every time you need to publish your library. In your “package.json” file, you need to change the version number to reflect whether the changes are major, minor, or patch updates.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm publish
+</span></span></code></pre></div><hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>At first, it might seem hard to create and publish your own library. But it is a lot easier to handle if you break the process down.</p>
+<p>To make something truly valuable, you need to do research. Look through existing libraries to get ideas and learn the best ways to do things.</p>
+<p>I really want to see what you have created. Leave a comment below with the libraries you have published.</p>
+<p>Happy coding!</p>
+
+  </article>
+  
+<div class="border-t border-slate-900 flex gap-4 mb-20 pt-10 text-gray-500">
+  <div>Tags:</div>
+  <ul>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/javascript/"
+        >JavaScript</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/node.js/"
+        >Node.js</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/npm/"
+        >NPM</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/typescript/"
+        >TypeScript</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/vite/"
+        >Vite</a
+      >
+    </li>
+    <li class="inline-block mb-2">
+      <a
+        class="bg-slate-900 hover:bg-slate-800 hover:text-gray-300 inline-block px-4 py-1 rounded-full"
+        href="/tags/programming/"
+        >Programming</a
+      >
+    </li>
+  </ul>
+</div>
+
+</section>
+
+</main>
+      <footer class="text-slate-500">
+  <div class="flex gap-20 justify-center px-4 py-10">
+    <nav>
+      <h3 class="font-bold mb-4">Tags</h3>
+      <ul
+        class="gap-x-4 gap-y-2 grid grid-cols-2 sm:grid-cols-3 [&>li>a]:hover:underline"
+      >
+        
+        <li>#<a href="https://jfmelo.com/tags/bmr/">BMR</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/design/">Design</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/fitness/">Fitness</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/git/">Git</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/github/">GitHub</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/health/">Health</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/javascript/">JavaScript</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/metabolism/">Metabolism</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/node.js/">Node.js</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/npm/">NPM</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/nutrition/">Nutrition</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/programming/">Programming</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/typescript/">TypeScript</a></li>
+        
+        <li>#<a href="https://jfmelo.com/tags/vite/">Vite</a></li>
+        
+        <li><a href="/tags">All tags</a></li>
+      </ul>
+    </nav>
+    <nav>
+      <h3 class="font-bold mb-4">Categories</h3>
+      <ul class="[&>li]:mb-2 [&>li>a]:hover:underline">
+        
+        <li><a href="https://jfmelo.com/categories/software-development/">Software Development</a></li>
+        
+        <li><a href="/categories">All categories</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="bg-slate-900/30 py-10 text-center text-sm">
+    2025 &copy; jfmelo. All rights reserved.
+  </p>
+</footer>
+
+      <script src="/js/main.51a8d17483f1addd86f79c03c20dc5634e0c5b20ceb4753e6bbdc296d78cb289.js" integrity="sha256-UajRdIPxrd2G95wDwg3FY04MWyDOtHU&#43;a73ClteMsok=" crossorigin="anonymous"></script>
+
+
+    </div>
+  </body>
+</html>

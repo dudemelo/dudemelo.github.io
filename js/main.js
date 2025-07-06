@@ -6,9 +6,6 @@
     canvas.width = document.body.clientWidth;
     canvas.height = 450;
     const context = canvas.getContext("2d");
-    window.addEventListener("resize", () => {
-      canvas.width = document.body.clientWidth;
-    });
     class ScrambleText {
       /** @param {HTMLElement} el **/
       constructor(el) {
@@ -95,6 +92,11 @@
         this.y *= value;
         return this;
       }
+      circularDistance(target) {
+        return Math.sqrt(
+          Math.pow(this.x - target.x, 2) + Math.pow(this.y - target.y, 2)
+        );
+      }
     }
     class Rect {
       /** @param {Vector} position **/
@@ -110,100 +112,103 @@
         );
       }
     }
-    class FloatingSquare {
-      constructor() {
-        this.reset();
-      }
-      getRandomSpeed() {
-        return Math.random() * 0.6 * (0.6 - 0.2) + 0.2 * (-1 * Math.round(Math.random()));
-      }
-      reset() {
-        const size = Math.random() * (20 - 10) + 5;
-        this.velocity = new Vector(this.getRandomSpeed(), this.getRandomSpeed());
-        const position = new Vector(
-          Math.random() * canvas.width,
-          Math.random() * canvas.height
+    class AnimatedCircle {
+      /**
+       * @param {Vector} pos
+       * @param {Number} rad
+       */
+      constructor(pos, minRad, maxRad) {
+        this.pos = pos;
+        this.rad = minRad;
+        this.minRad = minRad;
+        this.maxRad = maxRad;
+        this.hover = false;
+        this.prevHover = false;
+        this.mousePos = new Vector();
+        this.animProgress = 0;
+        this.animDirection = 0;
+        this.speed = 0.01;
+        document.addEventListener(
+          "mousemove",
+          this.updateMousePosition.bind(this)
         );
-        this.rect = new Rect(position, size, size);
       }
-      update() {
-        if (this.rect.position.x + this.rect.width < 0 || this.rect.position.x > canvas.width || this.rect.position.y + this.rect.height < 0 || this.rect.position.y > canvas.height) {
-          this.reset();
+      updateMousePosition(e) {
+        const rect = canvas.getBoundingClientRect();
+        this.mousePos = new Vector(e.clientX - rect.x, e.clientY - rect.y);
+      }
+      easeOutElastic(x) {
+        const c4 = 2 * Math.PI / 3;
+        return x === 0 ? 0 : x === 1 ? 1 : Math.pow(2, -10 * x) * Math.sin((x * 10 - 0.75) * c4) + 1;
+      }
+      updateRadius() {
+        const dist = this.pos.circularDistance(this.mousePos);
+        this.hover = dist < this.rad + this.rad * 2;
+        if (this.hover !== this.prevHover) {
+          this.animDirection = this.hover ? 1 : -1;
         }
-        this.rect.position.add(this.velocity);
+        if (this.animDirection === 1 && this.animProgress < 1 || this.animDirection === -1 && this.animProgress > 0) {
+          this.animProgress += this.animDirection * this.speed;
+          this.animProgress = Math.max(0, Math.min(1, this.animProgress));
+        }
+        const eased = this.easeOutElastic(this.animProgress);
+        this.rad = this.minRad + (this.maxRad - this.minRad) * eased;
+        this.prevHover = this.hover;
+      }
+      draw() {
         context.beginPath();
-        context.fillStyle = "rgba(0, 130, 250, 0.2)";
-        context.fillRect(
-          this.rect.position.x,
-          this.rect.position.y,
-          this.rect.width,
-          this.rect.height
-        );
+        context.fillStyle = `rgba(0, 100, 180, ${this.hover ? 1 : 0.15})`;
+        context.arc(this.pos.x, this.pos.y, this.rad, 0, 2 * Math.PI);
+        context.fill();
         context.closePath();
       }
-    }
-    class FakeCode {
-      constructor() {
-        this.amountRects = 20;
-        this.spacing = 8;
-        this.rects = [];
-        for (let i = 0; i < this.amountRects; i++) {
-          const width = this.getRandomWidth();
-          const position = new Vector(canvas.width - width, this.spacing * i);
-          this.rects.push(new Rect(position, width, 2));
-        }
-      }
-      getRandomWidth() {
-        return Math.random() * (150 - 50) + 50;
-      }
       update() {
-        context.beginPath();
-        context.fillStyle = "rgba(0, 130, 250, 0.2)";
-        this.rects.forEach((rect) => {
-          if (rect.position.y <= 0) {
-            rect.width = this.getRandomWidth();
-            rect.position.x = canvas.width - rect.width;
-          }
-          rect.position.y -= rect.position.y <= 0 ? -(this.spacing * this.amountRects) : 1.4;
-          context.fillRect(
-            rect.position.x,
-            rect.position.y,
-            rect.width,
-            rect.height
-          );
-        });
-        context.closePath();
+        this.updateRadius();
+        this.draw();
       }
     }
     class FuturisticCanvas {
       constructor() {
-        this.squares = [];
-        this.fakeCode = new FakeCode();
-        for (let i = 0; i < 30; i++) {
-          this.squares.push(new FloatingSquare());
+        this.grid = [];
+        this.updateGrid();
+      }
+      updateGrid() {
+        const circleRadius = { min: 4, max: 30 };
+        const gap = 20;
+        const cols = {
+          x: Math.round(canvas.width / (circleRadius.min + gap)),
+          y: Math.round(
+            (canvas.height - circleRadius.max * 3) / (circleRadius.min + gap)
+          )
+        };
+        for (let x = 0; x < cols.x; x++) {
+          for (let y = 0; y < cols.y; y++) {
+            this.grid.push(
+              new AnimatedCircle(
+                new Vector(
+                  x * (circleRadius.min * 2 + gap),
+                  y * (circleRadius.min * 2 + gap)
+                ),
+                circleRadius.min,
+                circleRadius.max
+              )
+            );
+          }
         }
       }
       update() {
         context.clearRect(0, 0, canvas.width, canvas.height);
-        let previousPos;
-        this.squares.forEach((square) => {
-          const currentPos = square.rect.center();
-          square.update();
-          if (previousPos instanceof Vector) {
-            context.beginPath();
-            context.strokeStyle = "rgba(0, 130, 250, 0.12)";
-            context.moveTo(previousPos.x, previousPos.y);
-            context.lineTo(currentPos.x, currentPos.y);
-            context.stroke();
-            context.closePath();
-          }
-          previousPos = square.rect.center();
+        this.grid.forEach((circle) => {
+          circle.update();
         });
-        this.fakeCode.update();
       }
     }
     const scramble = new Scramble();
     const futuristic = new FuturisticCanvas();
+    window.addEventListener("resize", () => {
+      canvas.width = document.body.clientWidth;
+      futuristic.updateGrid();
+    });
     let previousTime = performance.now();
     function mainLoop(timestamp) {
       scramble.update();

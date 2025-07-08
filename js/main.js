@@ -181,6 +181,7 @@
             (canvas.height - circleRadius.max * 3) / (circleRadius.min + gap)
           )
         };
+        this.grid = [];
         for (let x = 0; x < cols.x; x++) {
           for (let y = 0; y < cols.y; y++) {
             this.grid.push(

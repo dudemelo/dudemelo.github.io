@@ -1,59 +1,17 @@
-<!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="All you need to create and share your Javascript or Typescript library with the Open-source community."><meta property="og:title" content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024"><meta property="og:description" content="All you need to create and share your Javascript or Typescript library with the Open-source community."><meta property="og:url" content="https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/"><meta name=twitter:title content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024"><meta name=twitter:description content="All you need to create and share your Javascript or Typescript library with the Open-source community."><meta name=robots content="index, follow"><link rel=canonical href=https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/><link rel=alternate hreflang=en href=https://jfmelo.com><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Ledger&display=swap" rel=stylesheet><style type=text/css>@import "https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"</style><style type=text/tailwindcss>
-  #post h3,
-  #post h4 {
-    @apply mb-2;
-  }
-  #post p,
-  #post pre,
-  #post hr {
-    @apply mb-9;
-  }
-  #post h2 {
-    @apply font-bold mb-5 text-2xl tracking-tighter;
-  }
-  #post h3 {
-    @apply font-bold text-xl tracking-tighter;
-  }
-  #post h4 {
-    @apply font-bold text-lg tracking-tighter;
-  }
-  #post p,
-  #post ul {
-    @apply text-lg/8;
-  }
-  #post p a {
-    @apply underline;
-  }
-  #post pre {
-    @apply font-mono overflow-auto p-5 rounded;
-  }
-  #post hr {
-    @apply border-4 border-neutral-900;
-  }
-  #post #table-of-contents {
-    @apply bg-neutral-900/50 mb-8 mx-auto p-8 rounded;
-  }
-  #post #table-of-contents ol {
-    @apply list-decimal list-inside mt-2 text-neutral-400;
-  }
-  #post #table-of-contents ol a:hover {
-    @apply underline;
-  }
-  #post #table-of-contents ol li {
-    @apply mt-1;
-  }
-  #post blockquote {
-    @apply border-l-4 border-neutral-700 pl-4 italic text-neutral-400 mb-8;
-  }
-  #post ul {
-    @apply list-disc mb-9;
-    & li {
-      @apply mb-4 ml-4;
-    }
-  }
-</style><title>6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024 | Software Development and DevOps Insights | jfmelo.com</title><script src=https://unpkg.com/@tailwindcss/browser@4></script></head><body class="bg-neutral-950 overflow-x-hidden text-neutral-200"><header class="backdrop-blur flex items-center justify-between p-4 sticky top-0"><a class="font-bold font-ono text-2xl tracking-tighter" href=/ title="Software Development and DevOps Insights | jfmelo.com">jfmelo</a><ul class="flex font-medium"><li><a class="block hover:bg-black hover:text-neutral-200 px-4 py-1 rounded text-neutral-300 transition-colors" href=/>Home</a></li><li><a aria-current=page class="block px-4 py-1 bg-neutral-200 rounded text-neutral-950" href=/posts/>Blog</a></li></ul></header><main><section class="lg:px-0 max-w-2xl mx-auto px-4"><ul class="flex mb-6 text-neutral-600 text-sm"><li><a href=/><svg viewBox="0 0 20 20" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414.0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd"/></svg></a></li><li class=flex><svg viewBox="0 0 20 20" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M12.528 3.047a.75.75.0 01.449.961L8.433 16.504a.75.75.0 11-1.41-.512l4.544-12.496a.75.75.0 01.961-.449z" clip-rule="evenodd"/></svg>
+<!doctype html><html lang=en-US dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="All you need to create and share your Javascript or Typescript library with the Open-source community."><meta property="og:title" content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024"><meta property="og:description" content="All you need to create and share your Javascript or Typescript library with the Open-source community."><meta property="og:url" content="https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/"><meta name=twitter:title content="6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024"><meta name=twitter:description content="All you need to create and share your Javascript or Typescript library with the Open-source community."><meta name=robots content="index, follow"><link rel=canonical href=https://jfmelo.com/posts/6-steps-to-create-and-publish-a-modern-javascript-and-typescript-library-in-2024/><link rel=alternate hreflang=en href=https://jfmelo.com><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest>     
+<link
+  rel="stylesheet"
+  href="/css/main.6923ce3610f37ac3374236db3009e55c8a4536fdb762a91ad3e4fd338ed8e701.css"
+  integrity="sha256-aSPONhDzesM3QjbbMAnlXIpFNv23Yqka0&#43;T9M47Y5wE="
+  crossorigin="anonymous"
+/>
+   
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+</style>
+ <title>6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024 | Software Development and DevOps Insights | jfmelo.com</title></head><body><header class="backdrop-blur flex items-center justify-between p-4 sticky top-0"><a class="font-semibold font-ono text-2xl tracking-tighter" href=/ title="Software Development and DevOps Insights | jfmelo.com">jfmelo</a><ul class="flex font-medium"><li><a class="block hover:bg-black hover:text-neutral-200 px-4 py-1 rounded text-neutral-300 transition-colors" href=/>Home</a></li><li><a aria-current=page class="block px-4 py-1 bg-neutral-200 rounded text-neutral-950" href=/posts/>Blog</a></li></ul></header><main><section class="lg:px-0 max-w-2xl mx-auto px-4"><ul class="flex mb-6 text-neutral-600 text-sm"><li><a href=/><svg viewBox="0 0 20 20" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414.0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd"/></svg></a></li><li class=flex><svg viewBox="0 0 20 20" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M12.528 3.047a.75.75.0 01.449.961L8.433 16.504a.75.75.0 11-1.41-.512l4.544-12.496a.75.75.0 01.961-.449z" clip-rule="evenodd"/></svg>
 <a href=/posts/>Posts</a></li><li class=flex><svg viewBox="0 0 20 20" fill="currentColor" class="size-4"><path fill-rule="evenodd" d="M12.528 3.047a.75.75.0 01.449.961L8.433 16.504a.75.75.0 11-1.41-.512l4.544-12.496a.75.75.0 01.961-.449z" clip-rule="evenodd"/></svg>
-6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024</li></ul><article id=post><h1 class="font-black mb-8 text-5xl/15 tracking-tighter">6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024</h1><div class="border-neutral-900 border-b border-t py-3 text-neutral-500 text-sm"><span>7 min read</span>
+6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024</li></ul><article id=post><h1 class="font-black mb-8 text-5xl/15 tracking-tight">6 Steps to Create and Publish a Modern Javascript and Typescript Library in 2024</h1><div class="border-neutral-900 border-b border-t py-3 text-neutral-500 text-sm"><span>7 min read</span>
 <span aria-hidden=true>&bull;</span>
 <time datetime=2024-03-09T17:13:15+01:00>March 9, 2024</time></div><div class=mb-6></div><p>All you need to create and share your Javascript or Typescript library with the Open-source community.</p><article id=table-of-contents><strong>Table of contents</strong><nav id=TableOfContents><ol><li><a href=#prerequisites>Prerequisites</a></li><li><a href=#step-1-lay-a-strong-foundation-with-a-solid-scaffolding>Step 1: Lay a strong foundation with a solid scaffolding</a></li><li><a href=#step-2-understand-the-structure-of-your-library>Step 2: Understand the structure of your library</a></li><li><a href=#step-3-get-things-cleaned-up>Step 3: Get things cleaned up</a></li><li><a href=#step-4-write-and-test-your-library>Step 4: Write and test your library</a></li><li><a href=#step-5-build-your-library>Step 5: Build your library</a></li><li><a href=#step-6-publish-your-library>Step 6: Publish your library</a></li><li><a href=#conclusion>Conclusion</a></li></ol></nav></article><h2 id=prerequisites>Prerequisites</h2><p>Make sure that Node.js and NPM are installed on your computer before you start this step-by-step guide. To publish your library, you will also need an NPM user account.</p><p>Git and GitHub are not necessary, but you will need them if you want to share your library with other developers and let them contribute to the source code of your library.</p><h2 id=step-1-lay-a-strong-foundation-with-a-solid-scaffolding>Step 1: Lay a strong foundation with a solid scaffolding</h2><p>It is important to build a strong foundation for the code before diving into it.</p><p>At this stage, we usually do a lot of research on how other libraries organize their code, find the best ways to do things, and test tools for making bundles and setting up live servers.</p><p>Even though Vite is fairly new to the JavaScript ecosystem — it was made in 2020 — it has quickly become popular among front-end developers and for good reason.</p><p>Some of the great things about Vite are its fast live server, pre-configured bundles, and many other features. In addition, it can easily set up a simple but strong structure for your library. You can quickly get your library up and running by executing the command below and following the on-screen instructions.</p><div class=highlight><pre tabindex=0 style=color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm create vite
 </span></span></code></pre></div><h2 id=step-2-understand-the-structure-of-your-library>Step 2: Understand the structure of your library</h2><h3 id=the-root-directory>The root directory</h3><p>The name of the root directory is the name you choose for your library.</p><h3 id=node-modules-directory>Node modules directory</h3><p>NPM installs all of the dependencies your library needs in the “node_modules” directory.</p><p>Under “devDependencies” and “dependencies” in the “package.json” file, you can find all the dependencies your library needs.</p><h3 id=the-public-directory-and-indexhtml-file>The public directory and index.html file</h3><p>The “public” directory and “index.html” file are only used to test your library through the browser when you run the following command to turn on the live server:</p><div class=highlight><pre tabindex=0 style=color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>npm run dev

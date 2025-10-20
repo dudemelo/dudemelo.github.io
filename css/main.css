@@ -978,6 +978,111 @@ body {
   background-color: var(--color-neutral-950);
   color: var(--color-neutral-200);
 }
+#site-header {
+  position: sticky;
+  top: calc(var(--spacing) * 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: color-mix(in srgb, oklch(14.5% 0 0) 70%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklab, var(--color-neutral-950) 70%, transparent);
+  }
+  padding: calc(var(--spacing) * 4);
+  --tw-backdrop-blur: blur(8px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  .logo {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+    --tw-tracking: var(--tracking-tighter);
+    letter-spacing: var(--tracking-tighter);
+  }
+  .navigation {
+    display: flex;
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-500);
+    a {
+      display: block;
+      border-radius: 0.25rem;
+      padding-inline: calc(var(--spacing) * 4);
+      padding-block: calc(var(--spacing) * 1);
+      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-neutral-200);
+        }
+      }
+      &.active {
+        display: block;
+        border-radius: 0.25rem;
+        background-color: var(--color-neutral-900);
+        padding-inline: calc(var(--spacing) * 4);
+        padding-block: calc(var(--spacing) * 1);
+        color: var(--color-neutral-200);
+      }
+    }
+  }
+  .languages {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+    color: var(--color-neutral-500);
+  }
+}
+#site-footer {
+  background-color: color-mix(in srgb, oklch(20.5% 0 0) 40%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
+  }
+  padding-block: calc(var(--spacing) * 16);
+  color: var(--color-neutral-500);
+  & > div {
+    margin-inline: auto;
+    display: grid;
+    max-width: var(--container-4xl);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: calc(var(--spacing) * 20);
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  h4 {
+    margin-bottom: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 2);
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tags {
+    grid-column: span 2 / span 2;
+    ul {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: calc(var(--spacing) * 4);
+      @media (width >= 40rem) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  }
+  ul {
+    display: grid;
+    a {
+      display: block;
+      border-radius: 0.25rem;
+      padding-inline: calc(var(--spacing) * 2);
+      padding-block: calc(var(--spacing) * 1);
+      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-neutral-900);
+        }
+      }
+    }
+  }
+}
 #post h3, #post h4 {
   margin-bottom: calc(var(--spacing) * 2);
 }
